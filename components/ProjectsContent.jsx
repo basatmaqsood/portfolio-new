@@ -22,7 +22,7 @@ export default function ProjectsContent({ projects }) {
     },
   }
 
-  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.type === filter)
+  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter)
 
   return (
     <>
@@ -39,29 +39,29 @@ export default function ProjectsContent({ projects }) {
             All
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${filter === "web" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("web")}
+            className={`px-4 py-2 rounded-full ${filter === "live" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
+            onClick={() => setFilter("live")}
           >
-            Web
+            Live
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${filter === "ui" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("ui")}
+            className={`px-4 py-2 rounded-full ${filter === "package" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
+            onClick={() => setFilter("package")}
           >
-            UI/UX
+            Package
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${filter === "app" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("app")}
+            className={`px-4 py-2 rounded-full ${filter === "video" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
+            onClick={() => setFilter("video")}
           >
-            Apps
+            Video
           </button>
         </motion.div>
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={staggerContainer}
-          initial="hidden"
+          initial="hidden"          
           animate="visible"
         >
           {filteredProjects.map((project) => (
