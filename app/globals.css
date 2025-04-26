@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --accent-color: 139, 92, 246;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.accent-text {
+  color: rgb(var(--accent-color));
+}
+
+.accent-gradient {
+  background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
+}
+
+.nav-icon {
+  @apply w-6 h-6 text-white hover:text-purple-500 transition-colors;
+}
+
+.section-title {
+  @apply text-3xl font-bold mb-6;
+}
+
+.section-subtitle {
+  @apply text-purple-500 font-semibold;
+}
+
+.card {
+  @apply bg-zinc-900/90 backdrop-blur-sm rounded-lg p-4 hover:bg-zinc-800/90 transition-colors;
+}
+
+.tool-card {
+  @apply bg-zinc-900 rounded-lg p-4 flex items-center gap-3 hover:bg-zinc-800 transition-colors;
+}
+
+.faq-item {
+  @apply border-b border-zinc-800 py-4;
+}
+
+.faq-question {
+  @apply flex justify-between items-center w-full text-left py-2 text-white hover:text-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded;
+}
+
+.profile-card {
+  @apply bg-zinc-900/90 backdrop-blur-sm rounded-lg p-6 sticky top-24;
+}
+
+.profile-social-icon {
+  @apply w-5 h-5 text-zinc-400 hover:text-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded;
+}
+
+.cta-button {
+  @apply bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md transition-all;
+}
+
+.outline-button {
+  @apply border border-purple-600 text-white font-medium py-2 px-6 rounded-md hover:bg-purple-600/10 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
