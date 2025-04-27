@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/Background";
+import ParticleBackground from "@/components/ParticleBackground"
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import ProfileCard from "@/components/ProfileCard";
@@ -86,7 +87,9 @@ export default async function RootLayout({ children }) {
         className={`${inter.className} bg-black text-white overflow-x-hidden`}
       >
         <CustomCursor />
-        <Background />
+
+        {/* <Background /> */}
+        <ParticleBackground/>
         <div className="relative z-10">
           <a
             href="#main-content"
