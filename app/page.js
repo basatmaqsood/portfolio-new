@@ -11,10 +11,9 @@ import SkillsSection from "@/components/sections/SkillsSection"
 
 export default async function Home() {
   // Fetch data at build time with ISR
-  const [profileData, projects, blogPosts, services, skills] = await Promise.all([
+  const [profileData, services, skills] = await Promise.all([
     getProfileData(),
-    getProjects(),
-    getBlogPosts(),
+
     getServices(),
     getSkills()
   ]);
@@ -33,9 +32,9 @@ export default async function Home() {
       </Suspense>
 
       {/* Projects Section */}
-      <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
+      {/* <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
         <ProjectsSection projects={projects} />
-      </Suspense>
+      </Suspense> */}
 
       {/* Skills Section */}
       <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
@@ -43,9 +42,9 @@ export default async function Home() {
       </Suspense>
 
       {/* Blog Section */}
-      <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
+      {/* <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
         <BlogSection blogPosts={blogPosts} />
-      </Suspense>
+      </Suspense> */}
 
       {/* FAQ Section */}
       {/* <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>

@@ -1,29 +1,90 @@
-import { Inter } from "next/font/google"
-import "./globals.css"
-import Background from "@/components/Background"
-import CustomCursor from "@/components/CustomCursor"
-import Navbar from "@/components/Navbar"
-import ProfileCard from "@/components/ProfileCard"
-import { Suspense } from "react"
-import { getProfileData, getSocialLinks } from "@/lib/api"
-
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Background from "@/components/Background";
+import CustomCursor from "@/components/CustomCursor";
+import Navbar from "@/components/Navbar";
+import ProfileCard from "@/components/ProfileCard";
+import { Suspense } from "react";
+import { getProfileData, getSocialLinks } from "@/lib/api";
+import Head from "next/head";
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
-  title: "Basat Maqsood - Frontend Developer",
+  title: "Basat Maqsood - Software Engineer",
   description:
-    "Portfolio website of Basat Maqsood, a Frontend Developer specializing in creating innovative and user-focused solutions",
-    generator: 'v0.dev'
-}
+    "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+  keywords:
+    "Basat Maqsood, Software Engineer, Full Stack Developer, MERN Stack, Web Development, Responsive Web Applications",
+  authors: [{ name: "Basat Maqsood", url: "https://basatmaqsood.com" }],
+  creator: "Basat Maqsood",
+  openGraph: {
+    title: "Basat Maqsood - Software Engineer",
+    description:
+      "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+    url: "https://basatmaqsood.com",
+    siteName: "Basat Maqsood",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
+        width: 1200,
+        height: 630,
+        alt: "Basat Maqsood - Software Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Basat Maqsood - Software Engineer",
+    description:
+      "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+    images: ["https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png"],
+    creator: "@basatmaqsood",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  generator: "v0.dev",
+};
 
 export default async function RootLayout({ children }) {
   // Fetch profile data and social links at build time with ISR
-  const profileData = await getProfileData()
-  const socialLinks = await getSocialLinks()
+  const profileData = await getProfileData();
+  const socialLinks = await getSocialLinks();
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-black text-white overflow-x-hidden`}>
+      <Head>
+  {/* Other metadata */}
+  <link rel="canonical" href="https://basatmaqsood.com" />
+  
+  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Basat Maqsood",
+    "url": "https://basatmaqsood.com",
+    "image": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
+    "jobTitle": "Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance / Independent"
+    },
+    "sameAs": [
+      "https://github.com/basatmaqsood",
+      "https://linkedin.com/in/basatmaqsood",
+      "https://twitter.com/basatmaqsood"
+    ],
+    "description": "Full Stack Software Engineer with expertise in the MERN stack. Passionate about building responsive web applications and solving complex business problems.",
+    "nationality": "Pakistani"
+  }) }} />
+</Head>
+
+      <body
+        className={`${inter.className} bg-black text-white overflow-x-hidden`}
+      >
         <CustomCursor />
         <Background />
         <div className="relative z-10">
@@ -47,7 +108,10 @@ export default async function RootLayout({ children }) {
                     ></div>
                   }
                 >
-                  <ProfileCard profileData={profileData} socialLinks={socialLinks} />
+                  <ProfileCard
+                    profileData={profileData}
+                    socialLinks={socialLinks}
+                  />
                 </Suspense>
               </div>
               {/* Right Column - Content */}
@@ -57,5 +121,5 @@ export default async function RootLayout({ children }) {
         </div>
       </body>
     </html>
-  )
+  );
 }
