@@ -7,21 +7,20 @@ import Navbar from "@/components/Navbar";
 import ProfileCard from "@/components/ProfileCard";
 import { Suspense } from "react";
 import { getProfileData, getSocialLinks } from "@/lib/api";
-import Head from "next/head";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Basat Maqsood - Software Engineer",
-  description:
-    "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
-  keywords:
-    "Basat Maqsood, Software Engineer, Full Stack Developer, MERN Stack, Web Development, Responsive Web Applications",
+  description: "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+  keywords: "Basat Maqsood, Software Engineer, Full Stack Developer, MERN Stack, Web Development, Responsive Web Applications",
   authors: [{ name: "Basat Maqsood", url: "https://basatmaqsood.com" }],
   creator: "Basat Maqsood",
+  alternates: {
+    canonical: "https://basatmaqsood.com", // ✅ Add canonical properly
+  },
   openGraph: {
     title: "Basat Maqsood - Software Engineer",
-    description:
-      "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+    description: "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
     url: "https://basatmaqsood.com",
     siteName: "Basat Maqsood",
     images: [
@@ -38,8 +37,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Basat Maqsood - Software Engineer",
-    description:
-      "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+    description: "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
     images: ["https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png"],
     creator: "@basatmaqsood",
   },
@@ -49,7 +47,29 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   generator: "v0.dev",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Basat Maqsood",
+      "url": "https://basatmaqsood.com",
+      "image": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
+      "jobTitle": "Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance / Independent"
+      },
+      "sameAs": [
+        "https://github.com/basatmaqsood",
+        "https://linkedin.com/in/basatmaqsood",
+        "https://twitter.com/basatmaqsood"
+      ],
+      "description": "Full Stack Software Engineer with expertise in the MERN stack. Passionate about building responsive web applications and solving complex business problems.",
+      "nationality": "Pakistani"
+    }),
+  },
 };
+
 
 export default async function RootLayout({ children }) {
   // Fetch profile data and social links at build time with ISR
@@ -58,30 +78,6 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en" className="scroll-smooth">
-      <Head>
-  {/* Other metadata */}
-  <link rel="canonical" href="https://basatmaqsood.com" />
-  
-  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Basat Maqsood",
-    "url": "https://basatmaqsood.com",
-    "image": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
-    "jobTitle": "Software Engineer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelance / Independent"
-    },
-    "sameAs": [
-      "https://github.com/basatmaqsood",
-      "https://linkedin.com/in/basatmaqsood",
-      "https://twitter.com/basatmaqsood"
-    ],
-    "description": "Full Stack Software Engineer with expertise in the MERN stack. Passionate about building responsive web applications and solving complex business problems.",
-    "nationality": "Pakistani"
-  }) }} />
-</Head>
 
       <body
         className={`${inter.className} bg-black text-white overflow-x-hidden`}

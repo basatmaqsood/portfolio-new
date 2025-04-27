@@ -3,8 +3,10 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 import Link from "next/link"
+import SkillsSection from "./sections/SkillsSection"
+import ServicesSection from "./sections/ServicesSection"
 
-export default function AboutContent({ profileData, skills, certificates }) {
+export default function AboutContent({ profileData, skills, certificates, services }) {
   const [imageError, setImageError] = useState(false)
 
   const fadeInUp = {
@@ -22,45 +24,6 @@ export default function AboutContent({ profileData, skills, certificates }) {
     },
   }
 
-  // Use skills from API or fallback
-  const skillsData =
-    skills?.length > 0
-      ? skills
-      : [
-          { name: "HTML/CSS", category: "Frontend", level: 95 },
-          { name: "JavaScript", category: "Frontend", level: 90 },
-          { name: "React.js", category: "Frontend", level: 85 },
-          { name: "Next.js", category: "Frontend", level: 80 },
-          { name: "UI/UX Design", category: "Frontend", level: 75 },
-          { name: "Tailwind CSS", category: "Frontend", level: 90 },
-        ]
-
-  // Group skills by category
-  const frontendSkills = skillsData.filter((skill) => skill.category === "Frontend")
-  const backendSkills = skillsData.filter((skill) => skill.category === "Backend")
-
-  const experiences = [
-    {
-      company: "Creative Solutions",
-      position: "Senior Frontend Developer",
-      period: "2021 - Present",
-      description:
-        "Led frontend development for multiple high-profile clients, implementing responsive designs and optimizing performance.",
-    },
-    {
-      company: "WebTech Agency",
-      position: "Frontend Developer",
-      period: "2018 - 2021",
-      description:
-        "Developed and maintained client websites, collaborated with designers to implement pixel-perfect interfaces.",
-    },
-    {
-      company: "Digital Innovations",
-      position: "Junior Developer",
-      period: "2016 - 2018",
-      description: "Assisted in website development, learned modern frontend technologies and best practices.",
-    },
-  ]
 
   // Use profile image from API or fallback
   const profileImage =
@@ -75,12 +38,12 @@ export default function AboutContent({ profileData, skills, certificates }) {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <motion.div variants={fadeInUp}>
-            <div className="relative h-80 rounded-lg overflow-hidden">
+            <div className="relative h-full rounded-lg overflow-hidden">
               <Image
                 src={profileImage || "/placeholder.svg"}
                 alt="Profile"
                 fill
-                className="object-cover"
+                className="object-top object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 onError={() => setImageError(true)}
               />
@@ -128,68 +91,7 @@ export default function AboutContent({ profileData, skills, certificates }) {
         </div>
       </motion.section>
 
-      {/* Skills Section */}
-      <motion.section
-        className="mb-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeInUp}
-      >
-        <h2 className="section-title">
-          My <span className="text-purple-500">Skills</span>
-        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Frontend Skills */}
-          <motion.div variants={fadeInUp}>
-            <h3 className="text-xl font-bold mb-4">Frontend</h3>
-            <motion.div className="space-y-4" variants={staggerContainer}>
-              {frontendSkills.map((skill, index) => (
-                <motion.div key={index} className="mb-4" variants={fadeInUp}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-purple-500">{skill.level || 85}%</span>
-                  </div>
-                  <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-purple-500"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level || 85}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Backend Skills */}
-          <motion.div variants={fadeInUp}>
-            <h3 className="text-xl font-bold mb-4">Backend</h3>
-            <motion.div className="space-y-4" variants={staggerContainer}>
-              {backendSkills.map((skill, index) => (
-                <motion.div key={index} className="mb-4" variants={fadeInUp}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-purple-500">{skill.level || 80}%</span>
-                  </div>
-                  <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-purple-500"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level || 80}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
 
       {/* Certificates Section */}
       {certificates && certificates.length > 0 && (
@@ -221,35 +123,10 @@ export default function AboutContent({ profileData, skills, certificates }) {
           </motion.div>
         </motion.section>
       )}
+              <SkillsSection skills={skills} />
 
-      {/* Experience Section */}
-      <motion.section
-        className="mb-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeInUp}
-      >
-        <h2 className="section-title">
-          Work <span className="text-purple-500">Experience</span>
-        </h2>
+        <ServicesSection services={services} />
 
-        <motion.div className="relative border-l border-zinc-800 pl-8 ml-4" variants={staggerContainer}>
-          {experiences.map((exp, index) => (
-            <motion.div key={index} className="mb-12 relative" variants={fadeInUp}>
-              <div className="absolute -left-12 w-6 h-6 bg-purple-500 rounded-full" />
-              <div className="bg-zinc-900 p-6 rounded-lg">
-                <span className="inline-block px-3 py-1 bg-purple-500/10 text-purple-500 text-sm rounded-full mb-3">
-                  {exp.period}
-                </span>
-                <h3 className="text-xl font-bold mb-1">{exp.position}</h3>
-                <h4 className="text-zinc-400 mb-4">{exp.company}</h4>
-                <p className="text-zinc-300">{exp.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.section>
     </>
   )
 }

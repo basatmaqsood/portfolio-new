@@ -1,4 +1,4 @@
-import { getProfileData, getSkills, getCertificates } from "@/lib/api"
+import { getProfileData, getSkills, getCertificates, getServices } from "@/lib/api"
 import AboutContent from "@/components/AboutContent"
 
 
@@ -48,6 +48,8 @@ export default async function About() {
   const profileData = await getProfileData()
   const skills = await getSkills()
   const certificates = await getCertificates()
+  const services = await getServices()
 
-  return <AboutContent profileData={profileData} skills={skills} certificates={certificates} />
+
+  return <AboutContent profileData={profileData} skills={skills} certificates={certificates} services={services}/>
 }
