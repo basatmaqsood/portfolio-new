@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import ProfileCard from "@/components/ProfileCard";
 import { Suspense } from "react";
 import { getProfileData, getSocialLinks } from "@/lib/api";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
@@ -95,7 +96,7 @@ export default async function RootLayout({ children }) {
           </a>
           <Navbar />
           <main id="main-content" className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row gap-8 pt-24 pb-12">
+            <div className="flex flex-col md:flex-row gap-8 pt-24">
               {/* Left Column - Profile Card */}
               <div className="md:w-1/4">
                 <Suspense
@@ -117,6 +118,8 @@ export default async function RootLayout({ children }) {
               <div className="md:w-3/4">{children}</div>
             </div>
           </main>
+          <Footer />
+
         </div>
       </body>
     </html>

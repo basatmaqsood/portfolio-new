@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="text-center text-zinc-500 text-sm"
+      className="text-center text-zinc-500 text-sm mb-4 mt-4"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

@@ -1,8 +1,10 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Send, Mail, Phone, MapPin } from "lucide-react"
+import { Send, Mail, Phone, MapPin, Loader2 } from "lucide-react"
 import parse from "html-react-parser"
+import ReCAPTCHA from "react-google-recaptcha"
+import emailjs from "@emailjs/browser"
 
 export default function ContactContent({ profileData, contactInfo, socialLinks }) {
   const [formData, setFormData] = useState({
@@ -10,24 +12,95 @@ export default function ContactContent({ profileData, contactInfo, socialLinks }
     email: "",
     subject: "",
     message: "",
+    "bot-field": "", // Honeypot field
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+  const recaptchaRef = useRef(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return re.test(email)
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Here you would typically send the data to your backend
-    alert("Message sent! (This is a demo)")
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+
+    // Reset status
+    setSubmitStatus(null)
+
+    // Honeypot check - if filled, silently reject (bot detected)
+    if (formData["bot-field"]) {
+      console.warn("Spam bot detected")
+      // Fake success to confuse bots
+      setSubmitStatus("success")
+      return
+    }
+
+    // Email validation
+    if (!validateEmail(formData.email)) {
+      alert("Please enter a valid email address")
+      return
+    }
+
+    // Message length validation
+    if (formData.message.length > 1000) {
+      alert("Message is too long. Please limit to 1000 characters.")
+      return
+    }
+
+    try {
+      setIsSubmitting(true)
+
+      // Execute reCAPTCHA
+      const recaptchaToken = await recaptchaRef.current?.executeAsync()
+
+      if (!recaptchaToken) {
+        throw new Error("reCAPTCHA verification failed")
+      }
+
+      // Prepare data for EmailJS
+      const emailData = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        "g-recaptcha-response": recaptchaToken,
+      }
+
+      // Send email via EmailJS
+      const res = await emailjs.send(
+        "service_p5vtbeo", // Replace with your EmailJS service ID
+        "template_h603yi6", // Replace with your EmailJS template ID
+        emailData,
+        "QMyTR54nwEYUqRZSL", // Replace with your EmailJS public key
+      )
+
+      console.log("Email sent successfully:", res)
+      setSubmitStatus("success")
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        "bot-field": "",
+      })
+
+      // Reset reCAPTCHA
+      recaptchaRef.current?.reset()
+    } catch (error) {
+      console.error("Failed to send message:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const fadeInUp = {
@@ -131,6 +204,17 @@ export default function ContactContent({ profileData, contactInfo, socialLinks }
           <h2 className="text-2xl font-bold mb-6">Send me a message</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot field - hidden from users but visible to bots */}
+            <input
+              type="text"
+              name="bot-field"
+              value={formData["bot-field"]}
+              onChange={handleChange}
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-2">
@@ -144,6 +228,7 @@ export default function ContactContent({ profileData, contactInfo, socialLinks }
                   onChange={handleChange}
                   required
                   className="w-full bg-zinc-800 border-0 rounded-md p-3 text-white focus:ring-2 focus:ring-purple-500 focus:outline-none"
+                  maxLength={100}
                 />
               </div>
               <div>
@@ -158,6 +243,7 @@ export default function ContactContent({ profileData, contactInfo, socialLinks }
                   onChange={handleChange}
                   required
                   className="w-full bg-zinc-800 border-0 rounded-md p-3 text-white focus:ring-2 focus:ring-purple-500 focus:outline-none"
+                  maxLength={100}
                 />
               </div>
             </div>
@@ -174,6 +260,7 @@ export default function ContactContent({ profileData, contactInfo, socialLinks }
                 onChange={handleChange}
                 required
                 className="w-full bg-zinc-800 border-0 rounded-md p-3 text-white focus:ring-2 focus:ring-purple-500 focus:outline-none"
+                maxLength={150}
               />
             </div>
 
@@ -189,12 +276,43 @@ export default function ContactContent({ profileData, contactInfo, socialLinks }
                 required
                 rows={6}
                 className="w-full bg-zinc-800 border-0 rounded-md p-3 text-white focus:ring-2 focus:ring-purple-500 focus:outline-none resize-none"
+                maxLength={1000}
               />
+              <p className="text-xs text-zinc-500 mt-1">{formData.message.length}/1000 characters</p>
             </div>
 
-            <button type="submit" className="cta-button flex items-center gap-2">
-              Send Message <Send size={16} />
+            {/* Invisible reCAPTCHA */}
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              size="invisible"
+              sitekey="6LfKRywrAAAAANSTKm347JdHZnKFT8e8yyEzxqV2" // Replace with your reCAPTCHA site key
+            />
+
+            <button type="submit" className="cta-button flex items-center gap-2" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message <Send size={16} />
+                </>
+              )}
             </button>
+
+            {/* Status messages */}
+            {submitStatus === "success" && (
+              <div className="p-3 bg-green-500/20 text-green-400 rounded-md">
+                Your message has been sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="p-3 bg-red-500/20 text-red-400 rounded-md">
+                Failed to send message. Please try again or contact me directly via email.
+              </div>
+            )}
           </form>
         </motion.div>
       </motion.section>

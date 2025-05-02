@@ -97,7 +97,6 @@ export default async function Home() {
         <ContactSection />
       </Suspense>
 
-      <Footer />
     </>
   )
 }
