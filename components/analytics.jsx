@@ -9,7 +9,7 @@ export default function GoogleAnalytics({ measurementId }) {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    if (pathname && window.gtag) {
+    if (pathname && window.gtag) {  
       // Send pageview with updated path
       window.gtag("event", "page_view", {
         page_path: pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : ""),

@@ -9,8 +9,7 @@ import { Suspense } from "react";
 import { getProfileData, getSocialLinks } from "@/lib/api";
 import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
-import GoogleAnalytics from "@/components/analytics"
-import CookieConsent from "@/components/cookie-consent"
+
 
 export const metadata = {
   title: "Basat Maqsood - Software Engineer",
@@ -81,7 +80,6 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en" className="scroll-smooth">
-              <GoogleAnalytics measurementId='G-WE8B6Z67JQ' />
 
       <body
         className={`${inter.className} bg-black text-white overflow-x-hidden`}
@@ -124,8 +122,8 @@ export default async function RootLayout({ children }) {
           <Footer />
 
         </div>
-        <CookieConsent/>
       </body>
+      
     </html>
   );
 }
