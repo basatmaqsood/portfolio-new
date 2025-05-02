@@ -1,11 +1,7 @@
 import { Suspense } from "react"
-import { getProfileData, getProjects, getBlogPosts, getServices, getSkills } from "@/lib/api"
+import { getProfileData,  getServices, getSkills } from "@/lib/api"
 import BioCard from "@/components/BioCard"
-import ProjectsSection from "@/components/sections/ProjectsSection"
-import BlogSection from "@/components/sections/BlogSection"
-import FaqSection from "@/components/sections/FaqSection"
 import ContactSection from "@/components/sections/ContactSection"
-import Footer from "@/components/Footer"
 import ServicesSection from "@/components/sections/ServicesSection"
 import SkillsSection from "@/components/sections/SkillsSection"
 
