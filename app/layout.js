@@ -1,20 +1,24 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/Background";
-import ParticleBackground from "@/components/ParticleBackground"
+import ParticleBackground from "@/components/ParticleBackground";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import ProfileCard from "@/components/ProfileCard";
 import { Suspense } from "react";
 import { getProfileData, getSocialLinks } from "@/lib/api";
 import Footer from "@/components/Footer";
+import Script from 'next/script'
+
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 
 export const metadata = {
   title: "Basat Maqsood - Software Engineer",
-  description: "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
-  keywords: "Basat Maqsood, Software Engineer, Full Stack Developer, MERN Stack, Web Development, Responsive Web Applications",
+  description:
+    "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+  keywords:
+    "Basat Maqsood, Software Engineer, Full Stack Developer, MERN Stack, Web Development, Responsive Web Applications",
   authors: [{ name: "Basat Maqsood", url: "https://basatmaqsood.com" }],
   creator: "Basat Maqsood",
   alternates: {
@@ -22,7 +26,8 @@ export const metadata = {
   },
   openGraph: {
     title: "Basat Maqsood - Software Engineer",
-    description: "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+    description:
+      "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
     url: "https://basatmaqsood.com",
     siteName: "Basat Maqsood",
     images: [
@@ -39,8 +44,11 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Basat Maqsood - Software Engineer",
-    description: "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
-    images: ["https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png"],
+    description:
+      "Software Engineer | Full Stack Web Developer | Expertise in MERN Stack. Passionate about building Responsive Web applications and solving complex business problems.",
+    images: [
+      "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
+    ],
     creator: "@basatmaqsood",
   },
   icons: {
@@ -53,35 +61,49 @@ export const metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Basat Maqsood",
-      "url": "https://basatmaqsood.com",
-      "image": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
-      "jobTitle": "Software Engineer",
-      "worksFor": {
+      name: "Basat Maqsood",
+      url: "https://basatmaqsood.com",
+      image:
+        "https://res.cloudinary.com/dr7askqqy/image/upload/v1745730051/og_527f46ac1e.png",
+      jobTitle: "Software Engineer",
+      worksFor: {
         "@type": "Organization",
-        "name": "Freelance / Independent"
+        name: "Freelance / Independent",
       },
-      "sameAs": [
+      sameAs: [
         "https://github.com/basatmaqsood",
         "https://linkedin.com/in/basatmaqsood",
-        "https://twitter.com/basatmaqsood"
+        "https://twitter.com/basatmaqsood",
       ],
-      "description": "Full Stack Software Engineer with expertise in the MERN stack. Passionate about building responsive web applications and solving complex business problems.",
-      "nationality": "Pakistani"
+      description:
+        "Full Stack Software Engineer with expertise in the MERN stack. Passionate about building responsive web applications and solving complex business problems.",
+      nationality: "Pakistani",
     }),
   },
 };
-
 
 export default async function RootLayout({ children }) {
   // Fetch profile data and social links at build time with ISR
   const profileData = await getProfileData();
   const socialLinks = await getSocialLinks();
 
-  
-
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-WE8B6Z67JQ`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WE8B6Z67JQ');
+          `}
+        </Script>
+      </head>
 
       <body
         className={`${inter.className} bg-black text-white overflow-x-hidden`}
@@ -89,7 +111,7 @@ export default async function RootLayout({ children }) {
         <CustomCursor />
 
         {/* <Background /> */}
-        <ParticleBackground/>
+        <ParticleBackground />
         <div className="relative z-10">
           <a
             href="#main-content"
@@ -122,10 +144,8 @@ export default async function RootLayout({ children }) {
             </div>
           </main>
           <Footer />
-
         </div>
       </body>
-      
     </html>
   );
 }
