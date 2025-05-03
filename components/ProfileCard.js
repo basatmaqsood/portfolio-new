@@ -71,7 +71,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
             socialLinks.map((social, index) => (
               <a
                 key={index}
-                href={social.link.startsWith("http") ? social.link : `https://${social.link}`}
+                href={social.link}
                 className="profile-social-icon"
                 aria-label={social.title}
                 title={social.title}
