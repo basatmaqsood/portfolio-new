@@ -64,8 +64,8 @@ export default function AboutContent({ profileData, skills, certificates, servic
                 <p className="font-medium">{profileData?.Name || "Basat Maqsood"}</p>
               </div>
               <div>
-                <p className="text-zinc-400">Email:</p>
-                <p className="font-medium">{profileData?.email || "itzbasatmaqsood@gmail.com"}</p>
+                <p className="text-zinc-400">Job:</p>
+                <a href="mailto:itzbasatmaqsood@gmail.com" className="font-medium">{profileData?.job || "itzbasatmaqsood@gmail.com"}</a>
               </div>
               <div>
                 <p className="text-zinc-400">Age:</p>
@@ -74,6 +74,10 @@ export default function AboutContent({ profileData, skills, certificates, servic
               <div>
                 <p className="text-zinc-400">From:</p>
                 <p className="font-medium">{profileData?.citizenship || "Pakistan"}</p>
+              </div>
+              <div>
+                <p className="text-zinc-400">Email:</p>
+                <a href="mailto:itzbasatmaqsood@gmail.com" className="font-medium">{profileData?.email || "itzbasatmaqsood@gmail.com"}</a>
               </div>
             </div>
 

@@ -78,6 +78,8 @@ export default async function RootLayout({ children }) {
   const profileData = await getProfileData();
   const socialLinks = await getSocialLinks();
 
+  
+
   return (
     <html lang="en" className="scroll-smooth">
 
