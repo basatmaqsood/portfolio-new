@@ -106,3 +106,5 @@ export default function ProfileCard({ profileData, socialLinks }) {
     </motion.div>
   )
 }
+
+// fixing
