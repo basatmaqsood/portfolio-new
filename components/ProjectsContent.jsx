@@ -36,18 +36,19 @@ export default function ProjectsContent({ projects }) {
         </motion.h1>
 
         <motion.div className="flex flex-wrap gap-4 mb-10" variants={fadeInUp}>
+        <button
+            className={`px-4 py-2 rounded-full ${filter === "featured" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
+            onClick={() => setFilter("featured")}
+          >
+            Featured
+          </button>
           <button
             className={`px-4 py-2 rounded-full ${filter === "all" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
             onClick={() => setFilter("all")}
           >
             All
           </button>
-          <button
-            className={`px-4 py-2 rounded-full ${filter === "featured" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("featured")}
-          >
-            Featured
-          </button>
+
           <button
             className={`px-4 py-2 rounded-full ${filter === "live" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
             onClick={() => setFilter("live")}
