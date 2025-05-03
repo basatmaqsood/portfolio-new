@@ -26,7 +26,7 @@ export default function ProjectsContent({ projects }) {
 
   const filteredProjects = filter === "all" ? sortedData : sortedData.filter((project) => project.category.includes(filter))
 
-  console.log("Filtered Projects:", filteredProjects)
+  // console.log("Filtered Projects:", filteredProjects)
 
   return (
     <>
@@ -71,6 +71,7 @@ export default function ProjectsContent({ projects }) {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          key={filter}
           variants={staggerContainer}
           initial="hidden"          
           animate="visible"
