@@ -139,7 +139,9 @@ export default function ContactSection() {
             }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
+            <a href="/contact">
             <ChevronUp size={24} className="text-white" aria-hidden="true" />
+            </a>
           </motion.div>
         </motion.div>
       </div>
