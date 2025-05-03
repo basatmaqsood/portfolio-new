@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function ProjectsContent({ projects }) {
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState("featured")
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -24,7 +24,7 @@ export default function ProjectsContent({ projects }) {
     },
   }
 
-  const filteredProjects = filter === "all" ? sortedData : sortedData.filter((project) => project.category === filter)
+  const filteredProjects = filter === "all" ? sortedData : sortedData.filter((project) => project.category.includes(filter))
 
   console.log("Filtered Projects:", filteredProjects)
 
@@ -41,6 +41,12 @@ export default function ProjectsContent({ projects }) {
             onClick={() => setFilter("all")}
           >
             All
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full ${filter === "featured" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
+            onClick={() => setFilter("featured")}
+          >
+            Featured
           </button>
           <button
             className={`px-4 py-2 rounded-full ${filter === "live" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
