@@ -11,6 +11,8 @@ export default function ProjectsContent({ projects }) {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   }
+  const sortedData = projects.sort((a, b) => a.sort - b.sort);
+
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -22,7 +24,9 @@ export default function ProjectsContent({ projects }) {
     },
   }
 
-  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter)
+  const filteredProjects = filter === "all" ? sortedData : sortedData.filter((project) => project.category === filter)
+
+  console.log("Filtered Projects:", filteredProjects)
 
   return (
     <>
