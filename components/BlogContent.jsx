@@ -41,7 +41,7 @@ export default function BlogContent({ blogPosts }) {
         >
           {sortedData.map((post) => (
             <motion.article key={post.id} className="group" variants={fadeInUp} whileHover={{ y: -5 }}>
-              <Link href={`${post.link}`}>
+              <Link href={`${post.link}`} target="_blank">
                 <div className="relative h-56 mb-4 overflow-hidden rounded-lg">
                   <Image
                     src={post.cover.url || "/placeholder.svg"}
