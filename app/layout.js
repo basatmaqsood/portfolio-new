@@ -108,7 +108,7 @@ export default async function RootLayout({ children }) {
       <body
         className={`${inter.className} bg-black text-white overflow-x-hidden`}
       >
-        <CustomCursor />
+        {/* <CustomCursor /> */}
 
         {/* <Background /> */}
         <ParticleBackground />

@@ -22,26 +22,7 @@ body {
   background: rgb(var(--background-rgb));
 }
 
-@media (min-width: 768px) {
-  body {
-    cursor: none;
-  }
-}
 
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  background-color: white;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.2s ease;
-}
 
 .accent-text {
   color: rgb(var(--accent-color));
