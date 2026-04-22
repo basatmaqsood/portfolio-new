@@ -10,7 +10,7 @@ export default function Navbar() {
   const navItems = [
     { icon: <Home className="nav-icon" />, path: "/", label: "Home" },
     { icon: <User className="nav-icon" />, path: "/about", label: "About" },
-    { icon: <Briefcase className="nav-icon" />, path: "/projects", label: "Projects" },
+    { icon: <Briefcase className="nav-icon" />, path: "/work", label: "Work" },
     { icon: <FileText className="nav-icon" />, path: "/blog", label: "Blog" },
     { icon: <Mail className="nav-icon" />, path: "/contact", label: "Contact" },
   ]

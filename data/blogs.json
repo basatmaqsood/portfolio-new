@@ -1,0 +1,1082 @@
+[
+    {
+        "id": 1,
+        "document_id": "hdfikzazk2l2s10h0o4rjew1",
+        "title": "Why you should not use Vercel for RealTime apps!",
+        "description": "Vercel is the most popular and widely used hosting platform now a days that provide out of the box support for a number of frameworks and technologies like NextJs, Angular, Gatsby, Ember, Vite and a number of other frameworks. You can easily deploy any app with just a few clicks without having to manually handle all the configurations which can be pretty tiresome. Vercel saves us the efforts and time and just provides everything out of the box. But why Vercel is not a good Choice for Real-Time Apps? In this article, I will discuss why Vercel sucks at real time applications and which platforms can you use to deploy your Real-Time Applications.",
+        "link": "https://basatmaqsood.medium.com/why-you-should-not-use-vercel-for-realtime-apps-a-comprehensive-guide-to-deploy-realtime-apps-759769c590f3",
+        "created_at": "2025-04-23 19:48:48.143",
+        "updated_at": "2025-04-23 19:48:48.143",
+        "published_at": null,
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 9,
+            "document_id": "wfm6n8z7nsll8dw29qdj8v0b",
+            "name": "blog1.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 720,
+            "height": 405,
+            "formats": {
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745437691/small_blog1_51076ad422.webp",
+                    "hash": "small_blog1_51076ad422",
+                    "mime": "image/webp",
+                    "name": "small_blog1.webp",
+                    "path": null,
+                    "size": 18.7,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 18700,
+                    "provider_metadata": {
+                        "public_id": "small_blog1_51076ad422",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745437691/thumbnail_blog1_51076ad422.webp",
+                    "hash": "thumbnail_blog1_51076ad422",
+                    "mime": "image/webp",
+                    "name": "thumbnail_blog1.webp",
+                    "path": null,
+                    "size": 8.16,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 8160,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_blog1_51076ad422",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "blog1_51076ad422",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "30.55",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745437691/blog1_51076ad422.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "blog1_51076ad422",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-23 19:48:12.306",
+            "updated_at": "2025-04-23 19:48:12.306",
+            "published_at": "2025-04-23 19:48:12.307",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 2,
+        "document_id": "hdfikzazk2l2s10h0o4rjew1",
+        "title": "Why you should not use Vercel for RealTime apps!",
+        "description": "Vercel is the most popular and widely used hosting platform now a days that provide out of the box support for a number of frameworks and technologies like NextJs, Angular, Gatsby, Ember, Vite and a number of other frameworks. You can easily deploy any app with just a few clicks without having to manually handle all the configurations which can be pretty tiresome. Vercel saves us the efforts and time and just provides everything out of the box. But why Vercel is not a good Choice for Real-Time Apps? In this article, I will discuss why Vercel sucks at real time applications and which platforms can you use to deploy your Real-Time Applications.",
+        "link": "https://basatmaqsood.medium.com/why-you-should-not-use-vercel-for-realtime-apps-a-comprehensive-guide-to-deploy-realtime-apps-759769c590f3",
+        "created_at": "2025-04-23 19:48:48.143",
+        "updated_at": "2025-04-23 19:48:48.143",
+        "published_at": "2025-04-23 19:48:51.011",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 9,
+            "document_id": "wfm6n8z7nsll8dw29qdj8v0b",
+            "name": "blog1.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 720,
+            "height": 405,
+            "formats": {
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745437691/small_blog1_51076ad422.webp",
+                    "hash": "small_blog1_51076ad422",
+                    "mime": "image/webp",
+                    "name": "small_blog1.webp",
+                    "path": null,
+                    "size": 18.7,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 18700,
+                    "provider_metadata": {
+                        "public_id": "small_blog1_51076ad422",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745437691/thumbnail_blog1_51076ad422.webp",
+                    "hash": "thumbnail_blog1_51076ad422",
+                    "mime": "image/webp",
+                    "name": "thumbnail_blog1.webp",
+                    "path": null,
+                    "size": 8.16,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 8160,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_blog1_51076ad422",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "blog1_51076ad422",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "30.55",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745437691/blog1_51076ad422.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "blog1_51076ad422",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-23 19:48:12.306",
+            "updated_at": "2025-04-23 19:48:12.306",
+            "published_at": "2025-04-23 19:48:12.307",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 3,
+        "document_id": "uo53955riqe1dmun4fjfl205",
+        "title": "Navigating Common JavaScript Pitfalls: A Developer’s Guide",
+        "description": "JavaScript is a powerful and versatile programming language that has become the backbone of modern web. While it offers immense possibilities, developers often encounter common pitfalls that can lead to bugs, performance issues, and headaches. In this guide, we will explore some of these common JavaScript pitfalls and provide insights on how to navigate them like a pro.\n\n",
+        "link": "https://basatmaqsood.medium.com/navigating-common-javascript-pitfalls-a-developers-guide-3aa669329305",
+        "created_at": "2025-04-26 11:13:54.981",
+        "updated_at": "2025-05-03 10:30:06.551",
+        "published_at": null,
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 19,
+            "document_id": "zy8qkmi4p9kbtys5ruwa1yy0",
+            "name": "1_v0v38jELHtoBlGy8AiARQw.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 720,
+            "height": 405,
+            "formats": {
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666012/small_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33.webp",
+                    "hash": "small_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                    "mime": "image/webp",
+                    "name": "small_1_v0v38jELHtoBlGy8AiARQw.webp",
+                    "path": null,
+                    "size": 16.91,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 16906,
+                    "provider_metadata": {
+                        "public_id": "small_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666012/thumbnail_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33.webp",
+                    "hash": "thumbnail_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                    "mime": "image/webp",
+                    "name": "thumbnail_1_v0v38jELHtoBlGy8AiARQw.webp",
+                    "path": null,
+                    "size": 7.37,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 7366,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "29.89",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666012/1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-26 11:13:33.25",
+            "updated_at": "2025-04-26 11:13:33.25",
+            "published_at": "2025-04-26 11:13:33.25",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 5,
+        "document_id": "bnd90jfrl7es52e6o0wvx544",
+        "title": "Mastering Modern JavaScript: Tips and Tricks for Efficient Development",
+        "description": "Welcome to the world of modern JavaScript! In this article, we will dive into some essential tips and tricks that will help you become a more efficient developer. JavaScript has come a long way, evolving into a powerful language that is crucial for front-end development in today’s companies. We will explore various aspects of debugging, writing concise and efficient code, mastering modern loops, and simplifying asynchronous code using async/await. So, let’s get started!",
+        "link": "https://basatmaqsood.medium.com/mastering-modern-javascript-tips-and-tricks-for-efficient-development-2a77ead8b99c",
+        "created_at": "2025-04-26 11:16:04.264",
+        "updated_at": "2025-05-03 10:28:52.118",
+        "published_at": null,
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 20,
+            "document_id": "va62vxfrbrz2md0rg43dyh2t",
+            "name": "1_7_wHUu2kCrPnm-_0IE3Acg.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 720,
+            "height": 405,
+            "formats": {
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666112/small_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4.webp",
+                    "hash": "small_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                    "mime": "image/webp",
+                    "name": "small_1_7_wHUu2kCrPnm-_0IE3Acg.webp",
+                    "path": null,
+                    "size": 17.77,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 17772,
+                    "provider_metadata": {
+                        "public_id": "small_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666112/thumbnail_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4.webp",
+                    "hash": "thumbnail_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                    "mime": "image/webp",
+                    "name": "thumbnail_1_7_wHUu2kCrPnm-_0IE3Acg.webp",
+                    "path": null,
+                    "size": 7.27,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 7272,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "30.38",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666111/1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-26 11:15:12.699",
+            "updated_at": "2025-04-26 11:15:12.699",
+            "published_at": "2025-04-26 11:15:12.699",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 7,
+        "document_id": "hmnt6wvgsmoko046i59qmh4g",
+        "title": "Mastering JavaScript with 10 Mind-Blowing One-Liners",
+        "description": "JavaScript is a versatile programming language that powers the dynamic and interactive elements of countless websites and applications. While mastering the ins and outs of JavaScript can take time, there are clever one-liners that can elevate your coding skills to new heights. In this article, we will explore 10 mind-blowing one-liners that will help you level up your JavaScript game.\n\n",
+        "link": "https://basatmaqsood.medium.com/mastering-javascript-with-10-mind-blowing-one-liners-a0fc7d84daa0",
+        "created_at": "2025-04-26 11:19:04.456",
+        "updated_at": "2025-04-26 11:19:04.456",
+        "published_at": null,
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 21,
+            "document_id": "a8oyc77lew3g2kk44s7qyuwk",
+            "name": "1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 1400,
+            "height": 788,
+            "formats": {
+                "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666292/large_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "large_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "large_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 73.61,
+                    "width": 1000,
+                    "height": 563,
+                    "sizeInBytes": 73606,
+                    "provider_metadata": {
+                        "public_id": "large_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666291/small_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "small_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "small_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 30.37,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 30368,
+                    "provider_metadata": {
+                        "public_id": "small_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666292/medium_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "medium_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "medium_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 50.87,
+                    "width": 750,
+                    "height": 422,
+                    "sizeInBytes": 50866,
+                    "provider_metadata": {
+                        "public_id": "medium_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666291/thumbnail_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "thumbnail_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "thumbnail_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 11.07,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 11068,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "125.81",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666291/1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-26 11:18:12.743",
+            "updated_at": "2025-04-26 11:18:12.743",
+            "published_at": "2025-04-26 11:18:12.744",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 8,
+        "document_id": "hmnt6wvgsmoko046i59qmh4g",
+        "title": "Mastering JavaScript with 10 Mind-Blowing One-Liners",
+        "description": "JavaScript is a versatile programming language that powers the dynamic and interactive elements of countless websites and applications. While mastering the ins and outs of JavaScript can take time, there are clever one-liners that can elevate your coding skills to new heights. In this article, we will explore 10 mind-blowing one-liners that will help you level up your JavaScript game.\n\n",
+        "link": "https://basatmaqsood.medium.com/mastering-javascript-with-10-mind-blowing-one-liners-a0fc7d84daa0",
+        "created_at": "2025-04-26 11:19:04.456",
+        "updated_at": "2025-04-26 11:19:04.456",
+        "published_at": "2025-04-26 11:19:07.316",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 21,
+            "document_id": "a8oyc77lew3g2kk44s7qyuwk",
+            "name": "1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 1400,
+            "height": 788,
+            "formats": {
+                "large": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666292/large_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "large_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "large_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 73.61,
+                    "width": 1000,
+                    "height": 563,
+                    "sizeInBytes": 73606,
+                    "provider_metadata": {
+                        "public_id": "large_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666291/small_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "small_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "small_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 30.37,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 30368,
+                    "provider_metadata": {
+                        "public_id": "small_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666292/medium_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "medium_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "medium_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 50.87,
+                    "width": 750,
+                    "height": 422,
+                    "sizeInBytes": 50866,
+                    "provider_metadata": {
+                        "public_id": "medium_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666291/thumbnail_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+                    "hash": "thumbnail_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                    "mime": "image/webp",
+                    "name": "thumbnail_1_hjXq9TN-PK0uk8Qt9KB1JQ.webp",
+                    "path": null,
+                    "size": 11.07,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 11068,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "125.81",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666291/1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "1_hj_Xq9_TN_PK_0uk8_Qt9_KB_1_JQ_20d47882e7",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-26 11:18:12.743",
+            "updated_at": "2025-04-26 11:18:12.743",
+            "published_at": "2025-04-26 11:18:12.744",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 9,
+        "document_id": "if3vkvoucxacejgvmb1oiswp",
+        "title": "Web Development is Far More Than Making Websites!",
+        "description": "Once upon a time, websites were just digital brochures. A few lines of HTML and some inline CSS got the job done. But today? We’re building platforms like Gmail, Notion, Discord, TikTok — dynamic, interactive, data-driven beasts that feel more like desktop apps than old-school websites.",
+        "link": "https://medium.com/@basatmaqsood/web-development-is-far-more-than-making-websites-33a2df9309e3",
+        "created_at": "2025-05-03 10:26:04.443",
+        "updated_at": "2025-05-03 10:26:04.443",
+        "published_at": null,
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 23,
+            "document_id": "ham54occoshkwhflewsf5cuq",
+            "name": "Blog thumbnail.png",
+            "alternative_text": null,
+            "caption": null,
+            "width": 1280,
+            "height": 720,
+            "formats": {
+                "large": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/large_Blog_thumbnail_c053bb4931.png",
+                    "hash": "large_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "large_Blog thumbnail.png",
+                    "path": null,
+                    "size": 449.01,
+                    "width": 1000,
+                    "height": 563,
+                    "sizeInBytes": 449012,
+                    "provider_metadata": {
+                        "public_id": "large_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/small_Blog_thumbnail_c053bb4931.png",
+                    "hash": "small_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "small_Blog thumbnail.png",
+                    "path": null,
+                    "size": 134.95,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 134952,
+                    "provider_metadata": {
+                        "public_id": "small_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/medium_Blog_thumbnail_c053bb4931.png",
+                    "hash": "medium_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "medium_Blog thumbnail.png",
+                    "path": null,
+                    "size": 267.54,
+                    "width": 750,
+                    "height": 422,
+                    "sizeInBytes": 267538,
+                    "provider_metadata": {
+                        "public_id": "medium_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267920/thumbnail_Blog_thumbnail_c053bb4931.png",
+                    "hash": "thumbnail_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "thumbnail_Blog thumbnail.png",
+                    "path": null,
+                    "size": 42.55,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 42550,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "Blog_thumbnail_c053bb4931",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": "116.52",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/Blog_thumbnail_c053bb4931.png",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "Blog_thumbnail_c053bb4931",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-05-03 10:25:22.3",
+            "updated_at": "2025-05-03 10:25:22.3",
+            "published_at": "2025-05-03 10:25:22.3",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 10,
+        "document_id": "if3vkvoucxacejgvmb1oiswp",
+        "title": "Web Development is Far More Than Making Websites!",
+        "description": "Once upon a time, websites were just digital brochures. A few lines of HTML and some inline CSS got the job done. But today? We’re building platforms like Gmail, Notion, Discord, TikTok — dynamic, interactive, data-driven beasts that feel more like desktop apps than old-school websites.",
+        "link": "https://medium.com/@basatmaqsood/web-development-is-far-more-than-making-websites-33a2df9309e3",
+        "created_at": "2025-05-03 10:26:04.443",
+        "updated_at": "2025-05-03 10:26:04.443",
+        "published_at": "2025-05-03 10:26:07.281",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 23,
+            "document_id": "ham54occoshkwhflewsf5cuq",
+            "name": "Blog thumbnail.png",
+            "alternative_text": null,
+            "caption": null,
+            "width": 1280,
+            "height": 720,
+            "formats": {
+                "large": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/large_Blog_thumbnail_c053bb4931.png",
+                    "hash": "large_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "large_Blog thumbnail.png",
+                    "path": null,
+                    "size": 449.01,
+                    "width": 1000,
+                    "height": 563,
+                    "sizeInBytes": 449012,
+                    "provider_metadata": {
+                        "public_id": "large_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/small_Blog_thumbnail_c053bb4931.png",
+                    "hash": "small_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "small_Blog thumbnail.png",
+                    "path": null,
+                    "size": 134.95,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 134952,
+                    "provider_metadata": {
+                        "public_id": "small_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/medium_Blog_thumbnail_c053bb4931.png",
+                    "hash": "medium_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "medium_Blog thumbnail.png",
+                    "path": null,
+                    "size": 267.54,
+                    "width": 750,
+                    "height": 422,
+                    "sizeInBytes": 267538,
+                    "provider_metadata": {
+                        "public_id": "medium_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267920/thumbnail_Blog_thumbnail_c053bb4931.png",
+                    "hash": "thumbnail_Blog_thumbnail_c053bb4931",
+                    "mime": "image/png",
+                    "name": "thumbnail_Blog thumbnail.png",
+                    "path": null,
+                    "size": 42.55,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 42550,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_Blog_thumbnail_c053bb4931",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "Blog_thumbnail_c053bb4931",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": "116.52",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746267921/Blog_thumbnail_c053bb4931.png",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "Blog_thumbnail_c053bb4931",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-05-03 10:25:22.3",
+            "updated_at": "2025-05-03 10:25:22.3",
+            "published_at": "2025-05-03 10:25:22.3",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 12,
+        "document_id": "bnd90jfrl7es52e6o0wvx544",
+        "title": "Mastering Modern JavaScript: Tips and Tricks for Efficient Development",
+        "description": "Welcome to the world of modern JavaScript! In this article, we will dive into some essential tips and tricks that will help you become a more efficient developer. JavaScript has come a long way, evolving into a powerful language that is crucial for front-end development in today’s companies. We will explore various aspects of debugging, writing concise and efficient code, mastering modern loops, and simplifying asynchronous code using async/await. So, let’s get started!",
+        "link": "https://basatmaqsood.medium.com/mastering-modern-javascript-tips-and-tricks-for-efficient-development-2a77ead8b99c",
+        "created_at": "2025-04-26 11:16:04.264",
+        "updated_at": "2025-05-03 10:28:52.118",
+        "published_at": "2025-05-03 10:28:56.07",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 20,
+            "document_id": "va62vxfrbrz2md0rg43dyh2t",
+            "name": "1_7_wHUu2kCrPnm-_0IE3Acg.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 720,
+            "height": 405,
+            "formats": {
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666112/small_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4.webp",
+                    "hash": "small_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                    "mime": "image/webp",
+                    "name": "small_1_7_wHUu2kCrPnm-_0IE3Acg.webp",
+                    "path": null,
+                    "size": 17.77,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 17772,
+                    "provider_metadata": {
+                        "public_id": "small_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666112/thumbnail_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4.webp",
+                    "hash": "thumbnail_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                    "mime": "image/webp",
+                    "name": "thumbnail_1_7_wHUu2kCrPnm-_0IE3Acg.webp",
+                    "path": null,
+                    "size": 7.27,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 7272,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "30.38",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666111/1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "1_7_w_H_Uu2k_Cr_Pnm_0_IE_3_Acg_2e18f157d4",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-26 11:15:12.699",
+            "updated_at": "2025-04-26 11:15:12.699",
+            "published_at": "2025-04-26 11:15:12.699",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 13,
+        "document_id": "uo53955riqe1dmun4fjfl205",
+        "title": "Navigating Common JavaScript Pitfalls: A Developer’s Guide",
+        "description": "JavaScript is a powerful and versatile programming language that has become the backbone of modern web. While it offers immense possibilities, developers often encounter common pitfalls that can lead to bugs, performance issues, and headaches. In this guide, we will explore some of these common JavaScript pitfalls and provide insights on how to navigate them like a pro.\n\n",
+        "link": "https://basatmaqsood.medium.com/navigating-common-javascript-pitfalls-a-developers-guide-3aa669329305",
+        "created_at": "2025-04-26 11:13:54.981",
+        "updated_at": "2025-05-03 10:30:06.551",
+        "published_at": "2025-05-03 10:30:10.522",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 19,
+            "document_id": "zy8qkmi4p9kbtys5ruwa1yy0",
+            "name": "1_v0v38jELHtoBlGy8AiARQw.webp",
+            "alternative_text": null,
+            "caption": null,
+            "width": 720,
+            "height": 405,
+            "formats": {
+                "small": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666012/small_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33.webp",
+                    "hash": "small_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                    "mime": "image/webp",
+                    "name": "small_1_v0v38jELHtoBlGy8AiARQw.webp",
+                    "path": null,
+                    "size": 16.91,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 16906,
+                    "provider_metadata": {
+                        "public_id": "small_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".webp",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666012/thumbnail_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33.webp",
+                    "hash": "thumbnail_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                    "mime": "image/webp",
+                    "name": "thumbnail_1_v0v38jELHtoBlGy8AiARQw.webp",
+                    "path": null,
+                    "size": 7.37,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 7366,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": "29.89",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1745666012/1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33.webp",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "1_v0v38j_EL_Hto_Bl_Gy8_Ai_AR_Qw_5d65f15a33",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-04-26 11:13:33.25",
+            "updated_at": "2025-04-26 11:13:33.25",
+            "published_at": "2025-04-26 11:13:33.25",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 14,
+        "document_id": "bn2gy82mgf8u2o29qkentbg2",
+        "title": "How I converted my traditional portfolio website into a Full-Stack Engineering Project?",
+        "description": "So I just finished development of my latest Portfolio website and it is not any traditional portfolio website built using a template or any website builder. Its a Full-stack Engineering project that has covered a lot of things that normally developers miss out. So let’s explore this project.",
+        "link": "https://medium.com/@basatmaqsood/how-i-converted-my-traditional-portfolio-website-into-a-full-stack-engineering-project-9a6d5be4cceb",
+        "created_at": "2025-05-07 14:14:35.512",
+        "updated_at": "2025-05-07 14:14:35.512",
+        "published_at": null,
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 38,
+            "document_id": "wgb44t53r5ky78ywjady42kk",
+            "name": "portfolio blog.png",
+            "alternative_text": null,
+            "caption": null,
+            "width": 2560,
+            "height": 1440,
+            "formats": {
+                "large": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/large_portfolio_blog_dd1bd17181.png",
+                    "hash": "large_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "large_portfolio blog.png",
+                    "path": null,
+                    "size": 182.12,
+                    "width": 1000,
+                    "height": 563,
+                    "sizeInBytes": 182120,
+                    "provider_metadata": {
+                        "public_id": "large_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/small_portfolio_blog_dd1bd17181.png",
+                    "hash": "small_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "small_portfolio blog.png",
+                    "path": null,
+                    "size": 75.8,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 75795,
+                    "provider_metadata": {
+                        "public_id": "small_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/medium_portfolio_blog_dd1bd17181.png",
+                    "hash": "medium_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "medium_portfolio blog.png",
+                    "path": null,
+                    "size": 124.28,
+                    "width": 750,
+                    "height": 422,
+                    "sizeInBytes": 124280,
+                    "provider_metadata": {
+                        "public_id": "medium_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/thumbnail_portfolio_blog_dd1bd17181.png",
+                    "hash": "thumbnail_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "thumbnail_portfolio blog.png",
+                    "path": null,
+                    "size": 29.88,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 29884,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "portfolio_blog_dd1bd17181",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": "130.95",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/portfolio_blog_dd1bd17181.png",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "portfolio_blog_dd1bd17181",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-05-07 14:13:38.732",
+            "updated_at": "2025-05-07 14:13:38.732",
+            "published_at": "2025-05-07 14:13:38.732",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    },
+    {
+        "id": 15,
+        "document_id": "bn2gy82mgf8u2o29qkentbg2",
+        "title": "How I converted my traditional portfolio website into a Full-Stack Engineering Project?",
+        "description": "So I just finished development of my latest Portfolio website and it is not any traditional portfolio website built using a template or any website builder. Its a Full-stack Engineering project that has covered a lot of things that normally developers miss out. So let’s explore this project.",
+        "link": "https://medium.com/@basatmaqsood/how-i-converted-my-traditional-portfolio-website-into-a-full-stack-engineering-project-9a6d5be4cceb",
+        "created_at": "2025-05-07 14:14:35.512",
+        "updated_at": "2025-05-07 14:14:35.512",
+        "published_at": "2025-05-07 14:14:38.805",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "id": 38,
+            "document_id": "wgb44t53r5ky78ywjady42kk",
+            "name": "portfolio blog.png",
+            "alternative_text": null,
+            "caption": null,
+            "width": 2560,
+            "height": 1440,
+            "formats": {
+                "large": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/large_portfolio_blog_dd1bd17181.png",
+                    "hash": "large_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "large_portfolio blog.png",
+                    "path": null,
+                    "size": 182.12,
+                    "width": 1000,
+                    "height": 563,
+                    "sizeInBytes": 182120,
+                    "provider_metadata": {
+                        "public_id": "large_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/small_portfolio_blog_dd1bd17181.png",
+                    "hash": "small_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "small_portfolio blog.png",
+                    "path": null,
+                    "size": 75.8,
+                    "width": 500,
+                    "height": 281,
+                    "sizeInBytes": 75795,
+                    "provider_metadata": {
+                        "public_id": "small_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/medium_portfolio_blog_dd1bd17181.png",
+                    "hash": "medium_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "medium_portfolio blog.png",
+                    "path": null,
+                    "size": 124.28,
+                    "width": 750,
+                    "height": 422,
+                    "sizeInBytes": 124280,
+                    "provider_metadata": {
+                        "public_id": "medium_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".png",
+                    "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/thumbnail_portfolio_blog_dd1bd17181.png",
+                    "hash": "thumbnail_portfolio_blog_dd1bd17181",
+                    "mime": "image/png",
+                    "name": "thumbnail_portfolio blog.png",
+                    "path": null,
+                    "size": 29.88,
+                    "width": 245,
+                    "height": 138,
+                    "sizeInBytes": 29884,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_portfolio_blog_dd1bd17181",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "portfolio_blog_dd1bd17181",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": "130.95",
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1746627217/portfolio_blog_dd1bd17181.png",
+            "preview_url": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "portfolio_blog_dd1bd17181",
+                "resource_type": "image"
+            },
+            "folder_path": "/",
+            "created_at": "2025-05-07 14:13:38.732",
+            "updated_at": "2025-05-07 14:13:38.732",
+            "published_at": "2025-05-07 14:13:38.732",
+            "created_by_id": 1,
+            "updated_by_id": 1,
+            "locale": null
+        }
+    }
+]

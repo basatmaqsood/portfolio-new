@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "document_id": "kxn5qgh6w4jlfr7wbrk29foy",
+    "email": "itzbasatmaqsood@gmail.com",
+    "address": "Islamabad, Pakistan",
+    "phone": "+923260185306",
+    "created_at": "2025-04-23 19:56:35.519",
+    "updated_at": "2025-04-23 19:56:35.519",
+    "published_at": null,
+    "created_by_id": 1,
+    "updated_by_id": 1,
+    "locale": null
+  },
+  {
+    "id": 2,
+    "document_id": "kxn5qgh6w4jlfr7wbrk29foy",
+    "email": "itzbasatmaqsood@gmail.com",
+    "address": "Islamabad, Pakistan",
+    "phone": "+923260185306",
+    "created_at": "2025-04-23 19:56:35.519",
+    "updated_at": "2025-04-23 19:56:35.519",
+    "published_at": "2025-04-23 19:56:37.6",
+    "created_by_id": 1,
+    "updated_by_id": 1,
+    "locale": null
+  }
+]

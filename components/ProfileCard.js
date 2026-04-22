@@ -1,11 +1,23 @@
 "use client"
 import Image from "next/image"
-import { Download } from "lucide-react"
+import { Download, Linkedin, Github, Mail, Twitter, Link as LinkIcon, Facebook, Instagram, Youtube, MapPin, MessageCircle } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
-import parse from "html-react-parser"
 import { TypeAnimation } from 'react-type-animation';
+
+const getIcon = (title) => {
+  const t = title.toLowerCase();
+  if (t.includes("linkedin")) return <Linkedin size={18} strokeWidth={2.5} />;
+  if (t.includes("github")) return <Github size={18} strokeWidth={2.5} />;
+  if (t.includes("email") || t.includes("mail")) return <Mail size={18} strokeWidth={2.5} />;
+  if (t.includes("twitter") || t.includes("x")) return <Twitter size={18} strokeWidth={2.5} />;
+  if (t.includes("facebook")) return <Facebook size={18} strokeWidth={2.5} />;
+  if (t.includes("instagram")) return <Instagram size={18} strokeWidth={2.5} />;
+  if (t.includes("youtube")) return <Youtube size={18} strokeWidth={2.5} />;
+  if (t.includes("whatsapp")) return <MessageCircle size={18} strokeWidth={2.5} />;
+  return <LinkIcon size={18} strokeWidth={2.5} />;
+}
 
 
 export default function ProfileCard({ profileData, socialLinks }) {
@@ -24,82 +36,81 @@ export default function ProfileCard({ profileData, socialLinks }) {
 
   // Use dp2 as fallback if dp is not available or fails to load
   const profileImage =
-    imageError || !profileData.dp ? profileData.dp2?.url || "/profile-casual.jpeg" : profileData.dp.url
+    imageError || !profileData.dp ? profileData.dp2?.url || "/profile-casual.jpeg" : profileData.dp?.url || "/profile-casual.jpeg"
 
   return (
     <motion.div
-      className="profile-card"
+      className="bg-zinc-900 border border-zinc-800 rounded-none p-7 sticky top-24 transition-colors duration-300 hover:border-zinc-700 flex flex-col items-center"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center">
-        <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-purple-500">
+      <div className="flex flex-col items-center w-full">
+        <div className="relative w-28 h-28 rounded-none overflow-hidden mb-5 border-2 border-zinc-800">
           <Image
             src={profileImage || "/placeholder.svg"}
             alt={profileData?.Name || "Profile"}
             fill
             className="object-cover"
-            sizes="96px"
+            sizes="112px"
             priority
             onError={() => setImageError(true)}
           />
         </div>
-        <h2 className="text-xl font-bold">{profileData?.Name || "Basat Maqsood"}</h2>
+        <h2 className="text-2xl font-bold text-zinc-100 tracking-tight mb-2 text-center">{profileData?.Name || "Basat Maqsood"}</h2>
         <TypeAnimation
-  sequence={[
-    // Same substring at the start will only be typed once, initially
-    'Frontend Developer',
-    4000,
-    'MERN Stack Developer',
-    4000,
-    'Software Engineer',
-    4000,
-  ]}
-  speed={50}
-  className="text-zinc-400 mb-4"
-  repeat={Infinity}
-/>
-        {/* <p className="text-zinc-400 mb-4">{profileData?.job || "Frontend Developer"}</p> */}
-        <p className="text-zinc-400 text-sm flex items-center gap-1 mb-4">
-          <span className="inline-block w-3 h-3 bg-green-500 rounded-full" aria-hidden="true"></span>
+          sequence={[
+            'Frontend Developer',
+            4000,
+            'MERN Stack Developer',
+            4000,
+            'Software Engineer',
+            4000,
+          ]}
+          speed={50}
+          className="text-purple-400 font-medium mb-5 text-base text-center"
+          repeat={Infinity}
+        />
+
+        <p className="text-zinc-400 text-sm flex items-center gap-2 mb-6">
+          <MapPin size={16} className="text-purple-500" />
           {profileData?.address || "Islamabad, Pakistan"}
         </p>
 
-        <div className="flex justify-center gap-3 mb-6">
+        <div className="flex flex-wrap justify-center gap-3 mb-8 w-full">
           {socialLinks &&
             socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.link}
-                className="profile-social-icon"
+                className="w-10 h-10 rounded-none bg-zinc-800 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors duration-300"
                 aria-label={social.title}
                 title={social.title}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {parse(social.icon)}
+                {getIcon(social.title)}
               </a>
             ))}
         </div>
 
         <Link
           href="/contact"
-          className="cta-button w-full text-center focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900"
+          className="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-medium py-2.5 px-6 rounded-none transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900 mb-4"
         >
           Let&apos;s Talk
         </Link>
 
         {profileData?.cv && profileData.cv.length > 0 && (
           <a
-            href={profileData.cv[0].url}
+            href={profileData.cv?.[0]?.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 text-sm text-zinc-400 hover:text-purple-500 flex items-center gap-1 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded"
+            className="w-full text-center py-2.5 px-6 rounded-none border border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white hover:border-zinc-500 transition-all duration-300 flex items-center justify-center gap-2"
             aria-label="Download CV"
           >
-            <Download size={14} aria-hidden="true" />
-            Download CV
+            <Download size={16} strokeWidth={2.5} />
+            <span className="font-medium">Download CV</span>
           </a>
         )}
       </div>

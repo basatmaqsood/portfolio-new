@@ -1,18 +1,16 @@
 "use client"
-import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import ExperienceSection from "./sections/ExperienceSection"
 
 export default function ProjectsContent({ projects }) {
-  const [filter, setFilter] = useState("featured")
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   }
-  const sortedData = projects.sort((a, b) => a.sort - b.sort);
-
+  
+  const sortedData = [...projects].sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -24,81 +22,63 @@ export default function ProjectsContent({ projects }) {
     },
   }
 
-  const filteredProjects = filter === "all" ? sortedData : sortedData.filter((project) => project.category.includes(filter))
-
-  // console.log("Filtered Projects:", filteredProjects)
-
   return (
     <>
-      <motion.section initial="hidden" animate="visible" variants={fadeInUp}>
-        <motion.h1 className="text-4xl font-bold mb-6" variants={fadeInUp}>
-          My <span className="text-purple-500">Projects</span>
-        </motion.h1>
+      {/* Professional Experience at the top */}
+      <ExperienceSection />
 
-        <motion.div className="flex flex-wrap gap-4 mb-10" variants={fadeInUp}>
-        <button
-            className={`px-4 py-2 rounded-full ${filter === "featured" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("featured")}
-          >
-            Featured
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${filter === "all" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("all")}
-          >
-            All
-          </button>
-
-          <button
-            className={`px-4 py-2 rounded-full ${filter === "live" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("live")}
-          >
-            Live
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${filter === "package" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("package")}
-          >
-            Package
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${filter === "video" ? "bg-purple-600" : "bg-zinc-800"} transition-colors`}
-            onClick={() => setFilter("video")}
-          >
-            Video
-          </button>
-        </motion.div>
+      <motion.section initial="hidden" animate="visible" variants={fadeInUp} className="mt-16">
+        <motion.h2 className="text-4xl font-bold mb-10" variants={fadeInUp}>
+          Hobby <span className="text-purple-500">Projects</span>
+        </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          key={filter}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={staggerContainer}
           initial="hidden"          
           animate="visible"
         >
-          {filteredProjects.map((project) => (
+          {sortedData.map((project) => (
             <motion.div
               key={project.id}
-              className="card overflow-hidden group"
+              className="bg-zinc-900 border border-zinc-800 rounded-none overflow-hidden group transition-all duration-300 hover:border-zinc-700 hover:-translate-y-1 flex flex-col"
               variants={fadeInUp}
-              whileHover={{ y: -5 }}
             >
-              <Link target="_blank" href={`${project.link}`} className="block">
-              <div className="relative h-48 mb-4 overflow-hidden rounded-md">
-                <Image
-                  src={project.cover.url || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  loading="lazy"
-                />
-              </div>
-              <h3 className="font-bold text-xl mb-1">{project.title}</h3>
-              <p className="text-purple-500 text-sm mb-3">{project.category}</p>
-              <p className="text-zinc-400">{project.description}</p>
+              <Link target="_blank" href={project.link || "#"} className="block h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded-none">
+                <div className="relative h-60 w-full overflow-hidden bg-zinc-900 border-b border-zinc-800 rounded-none">
+                  <Image
+                    src={project.cover?.url || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
+                  />
+                  {project.category && (
+                     <div className="absolute top-4 right-4 z-20 bg-zinc-900/90 border border-zinc-700 text-xs font-bold px-4 py-1.5 rounded-none text-zinc-100 uppercase tracking-tighter transition-colors group-hover:bg-purple-600 group-hover:border-purple-500">
+                        {project.category}
+                     </div>
+                  )}
+                </div>
+                
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="font-bold text-2xl mb-3 text-zinc-100 group-hover:text-purple-400 transition-colors duration-300">{project.title}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-8 line-clamp-3">{project.description}</p>
+                  
+                  <div className="mt-auto pt-5 border-t border-zinc-800/50 flex items-center justify-between text-sm">
+                      <div className="text-zinc-500 font-bold flex items-center gap-2 tracking-tighter uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-purple-500"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        {project.date || "2024"}
+                      </div>
+                      <div className="flex items-center text-purple-500 font-bold tracking-widest uppercase text-[10px]">
+                        <span className="mr-3 group-hover:text-purple-400 transition-colors">Launch Project</span>
+                        <div className="w-8 h-8 rounded-none bg-zinc-800 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-0.5 transition-transform duration-300"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                      </div>
+                  </div>
+                </div>
               </Link>
-
             </motion.div>
           ))}
         </motion.div>
