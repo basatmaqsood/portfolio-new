@@ -64,7 +64,7 @@ export default function BioCard({ profileData }) {
 
         <div className="space-y-8">
           <p className="text-zinc-400 leading-relaxed text-base italic border-l-2 border-zinc-700 pl-6 py-2 bg-zinc-800 rounded-none">
-            &quot;{profileData?.bio || "Dedicated Software Engineering student at UET Taxila, crafting innovative solutions."}&quot;
+            &quot;{profileData?.bio || "Dedicated Software Engineering graduate from UET Taxila, crafting innovative solutions."}&quot;
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mt-8">
@@ -95,8 +95,8 @@ export default function BioCard({ profileData }) {
               <div className="flex flex-col overflow-hidden">
                 <span className="text-zinc-500 uppercase tracking-widest text-[10px] font-bold mb-0.5">E-mail</span>
                 <span className="text-zinc-100 font-semibold truncate hover:text-purple-400">
-                  <a href={`mailto:${profileData?.email || "itzbasatmaqsood@gmail.com"}`}>
-                    {profileData?.email || "itzbasatmaqsood@gmail.com"}
+                  <a href={`mailto:${profileData?.email || "me@basatmaqsood.com"}`}>
+                    {profileData?.email || "me@basatmaqsood.com"}
                   </a>
                 </span>
               </div>

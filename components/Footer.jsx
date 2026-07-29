@@ -19,7 +19,7 @@ export default function Footer() {
         Made with ❤ by <span className="text-purple-500">Basat Maqsood</span>
       </p>
       <div className="flex justify-center gap-2 mt-2">
-        <a href="mailto:itzbasatmaqsood@gmail.com"
+        <a href="mailto:me@basatmaqsood.com"
                   className="text-xs bg-zinc-900 px-2 py-1 rounded hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
           aria-label="Email Me"
         >

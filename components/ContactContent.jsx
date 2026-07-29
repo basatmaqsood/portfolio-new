@@ -77,7 +77,7 @@ export default function ContactContent({ profileData, contactInfo }) {
     visible: { opacity: 1, y: 0 },
   }
 
-  const email = contactInfo?.email || profileData?.email || "itzbasatmaqsood@gmail.com"
+  const email = contactInfo?.email || profileData?.email || "me@basatmaqsood.com"
   const phone = contactInfo?.phone || "+923260185306"
   const address = contactInfo?.address || profileData?.address || "Islamabad, Pakistan"
 

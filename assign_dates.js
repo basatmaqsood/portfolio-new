@@ -6,8 +6,8 @@ let projects = JSON.parse(fs.readFileSync(projectsPath, 'utf8'));
 
 // Basic projects: HTML/CSS or simple clones
 const basicKeywords = ["Car Rental", "BackRoads", "Kaun Bane ga", "Wordle", "Giphy", "PopCorn", "React Buttons"];
-const mediumKeywords = ["AirBnB", "React Slots", "URL TO QR"];
-// Latest: ChatGPT, Lang-Bridge, Next-Rivals, BlurtBox, Swift, etc.
+const mediumKeywords = ["AirBnB", "URL TO QR"];
+// Latest: ChatGPT, Lang-Bridge, Next-Rivals, BlurtBox, Swift, React Slots, etc.
 
 projects = projects.map(p => {
     let dateStr = "2024";
@@ -21,7 +21,7 @@ projects = projects.map(p => {
         dateStr = `Early 2023`;
     } else if (isMedium) {
         dateStr = `Late 2023`;
-    } else if (title.includes("blurtbox") || title.includes("swift") || title.includes("lang-bridge")) {
+    } else if (title.includes("blurtbox") || title.includes("swift") || title.includes("lang-bridge") || title.includes("react slots")) {
         dateStr = `Early 2025`;
     } else if (title.includes("next-rivals")) {
         dateStr = `Feb 2025`;

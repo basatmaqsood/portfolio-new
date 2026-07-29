@@ -95,7 +95,7 @@ export default function AboutContent({ profileData, skills, certificates, servic
               <h2 className="text-3xl font-bold text-zinc-100">{profileData?.Name || "Basat Maqsood"}</h2>
               <h3 className="text-purple-500 text-xl font-medium">{profileData?.job || "Software Engineer"}</h3>
               <p className="text-zinc-400 leading-relaxed text-base italic border-l-2 border-zinc-800 pl-4 py-1">
-                &quot;{profileData?.bio || "Hi I am Basat, a Software Engineering student at UET Taxila, passionate about building scalable, user-centric solutions."}&quot;
+                &quot;{profileData?.bio || "Hi I am Basat, a Software Engineering graduate from UET Taxila, passionate about building scalable, user-centric solutions."}&quot;
               </p>
             </div>
 
@@ -137,8 +137,8 @@ export default function AboutContent({ profileData, skills, certificates, servic
                 <div className="flex flex-col overflow-hidden">
                   <span className="text-zinc-500 uppercase tracking-widest text-[9px] font-bold">E-mail</span>
                   <span className="text-zinc-100 font-medium truncate">
-                    <a href={`mailto:${profileData?.email || "itzbasatmaqsood@gmail.com"}`} className="hover:text-purple-400 transition-colors">
-                      {profileData?.email || "itzbasatmaqsood@gmail.com"}
+                    <a href={`mailto:${profileData?.email || "me@basatmaqsood.com"}`} className="hover:text-purple-400 transition-colors">
+                      {profileData?.email || "me@basatmaqsood.com"}
                     </a>
                   </span>
                 </div>
