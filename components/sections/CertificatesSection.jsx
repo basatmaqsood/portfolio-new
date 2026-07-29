@@ -57,7 +57,7 @@ export default function CertificatesSection({ certificates = [] }) {
         {certificates.map((cert, index) => (
           <motion.div
             key={cert.id || index}
-            className="group relative bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-purple-500/30 hover:bg-zinc-800/80 transition-colors duration-300 overflow-hidden"
+            className="group relative bg-surface p-6 rounded-lg border border-border hover:border-brand-500/30 hover:bg-surface-elevated/80 transition-colors duration-300 overflow-hidden"
             custom={index}
             variants={reduce ? undefined : cardIn}
             initial={reduce ? false : "hidden"}
@@ -65,7 +65,7 @@ export default function CertificatesSection({ certificates = [] }) {
             viewport={viewport}
           >
             <motion.div
-              className="absolute left-0 top-0 bottom-0 w-0.5 bg-purple-500 origin-top"
+              className="absolute left-0 top-0 bottom-0 w-0.5 bg-brand-500 origin-top"
               initial={reduce ? false : { scaleY: 0 }}
               whileInView={reduce ? undefined : { scaleY: 1 }}
               viewport={viewport}
@@ -81,7 +81,7 @@ export default function CertificatesSection({ certificates = [] }) {
               data-cursor="hover"
             >
               <motion.div
-                className="text-purple-500 mt-0.5 shrink-0 w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors"
+                className="text-brand-500 mt-0.5 shrink-0 w-10 h-10 rounded-lg bg-brand-600/10 flex items-center justify-center group-hover:bg-brand-600/15 transition-colors"
                 variants={reduce ? undefined : iconIn}
               >
                 <Award size={22} strokeWidth={2} aria-hidden />
@@ -89,20 +89,20 @@ export default function CertificatesSection({ certificates = [] }) {
 
               <motion.div className="min-w-0 flex-1" variants={reduce ? undefined : textIn}>
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-xl font-bold mb-2 text-zinc-100 group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-brand-700 transition-colors">
                     {cert.title}
                   </h3>
                   <ExternalLink
                     size={16}
-                    className="shrink-0 mt-1 text-zinc-500 group-hover:text-purple-400 transition-colors"
+                    className="shrink-0 mt-1 text-muted-foreground group-hover:text-brand-700 transition-colors"
                     aria-hidden
                   />
                 </div>
 
-                <div className="w-8 h-px bg-purple-500/70 mb-3" aria-hidden />
+                <div className="w-8 h-px bg-brand-500/70 mb-3" aria-hidden />
 
-                <p className="text-zinc-400 text-sm flex items-center gap-2">
-                  <BadgeCheck size={14} className="text-purple-500 shrink-0" aria-hidden />
+                <p className="text-muted-foreground text-sm flex items-center gap-2">
+                  <BadgeCheck size={14} className="text-brand-500 shrink-0" aria-hidden />
                   <span>{getIssuerLabel(cert.issued_by)}</span>
                 </p>
               </motion.div>

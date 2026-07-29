@@ -73,11 +73,11 @@ export default function ExperienceSection() {
 
       <div className="relative ml-3 md:ml-6 mt-10">
         {/* Track */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-zinc-800" aria-hidden />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-surface-elevated" aria-hidden />
 
         {/* Scroll-driven fill line */}
         <motion.div
-          className="absolute left-0 top-0 w-px origin-top bg-gradient-to-b from-purple-400 via-purple-500 to-purple-700"
+          className="absolute left-0 top-0 w-px origin-top bg-gradient-to-b from-brand-400 via-brand-500 to-brand-700"
           style={{
             height: "100%",
             scaleY: reduce ? 1 : lineScale,
@@ -96,30 +96,30 @@ export default function ExperienceSection() {
               variants={staggerContainer}
             >
               <motion.div
-                className="absolute w-4 h-4 bg-zinc-900 border-2 border-purple-500 rounded-full -left-[7.5px] top-6 flex items-center justify-center z-10"
+                className="absolute w-4 h-4 bg-surface border-2 border-brand-500 rounded-full -left-[7.5px] top-6 flex items-center justify-center z-10"
                 variants={{
                   hidden: { scale: 0, opacity: 0 },
                   visible: {
                     scale: 1,
                     opacity: 1,
-                    boxShadow: "0 0 16px 2px rgba(139,92,246,0.4)",
+                    boxShadow: "0 0 16px 2px rgba(20, 115, 90,0.28)",
                     transition: { type: "spring", stiffness: 280, damping: 16, delay: 0.05 },
                   },
                 }}
               >
-                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-brand-500 rounded-full" />
               </motion.div>
 
               <motion.div
-                className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-zinc-700 transition-colors duration-300 group"
+                className="bg-surface border border-border rounded-lg p-6 md:p-8 hover:border-border transition-colors duration-300 group"
                 variants={childReveal}
               >
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-5 gap-4 border-b border-zinc-800/80 pb-5">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-5 gap-4 border-b border-border/80 pb-5">
                   <div>
-                    <h3 className="text-xl font-bold text-zinc-100 group-hover:text-purple-400 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-brand-700 transition-colors duration-300">
                       {exp.role}
                     </h3>
-                    <div className="text-base font-medium text-purple-500 mt-1 flex items-center gap-2">
+                    <div className="text-base font-medium text-brand-500 mt-1 flex items-center gap-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -143,10 +143,10 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                    <span className="bg-zinc-800/50 text-zinc-300 border border-zinc-800 px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap mb-2">
+                    <span className="bg-surface-elevated/50 text-muted-foreground border border-border px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap mb-2">
                       {exp.date}
                     </span>
-                    <span className="text-zinc-500 text-sm flex items-center gap-1.5 font-medium">
+                    <span className="text-muted-foreground text-sm flex items-center gap-1.5 font-medium">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="14"
@@ -170,7 +170,7 @@ export default function ExperienceSection() {
                   {exp.points.map((point, i) => (
                     <motion.li
                       key={i}
-                      className="text-zinc-400 leading-relaxed text-sm md:text-base flex gap-3"
+                      className="text-muted-foreground leading-relaxed text-sm md:text-base flex gap-3"
                       variants={{
                         hidden: { opacity: 0, x: 16 },
                         visible: {
@@ -180,7 +180,7 @@ export default function ExperienceSection() {
                         },
                       }}
                     >
-                      <span className="text-purple-500 mt-1 shrink-0">
+                      <span className="text-brand-500 mt-1 shrink-0">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"

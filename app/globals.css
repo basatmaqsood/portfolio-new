@@ -2,10 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Editorial Forest theme (light)
+  Soft mint-bone ground, deep ink text, forest emerald accent.
+  Intentionally avoids dark+blue/purple/gold "AI portfolio" tropes.
+*/
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 0, 0, 0;
-  --accent-color: 139, 92, 246;
+  --background: 150 20% 94%;
+  --foreground: 165 35% 10%;
+
+  --surface: 148 18% 91%;
+  --surface-elevated: 148 16% 88%;
+  --surface-hover: 148 15% 85%;
+
+  --card: 148 18% 91%;
+  --card-foreground: 165 35% 10%;
+
+  --popover: 148 18% 91%;
+  --popover-foreground: 165 35% 10%;
+
+  --primary: 162 68% 28%;
+  --primary-foreground: 150 30% 98%;
+
+  --secondary: 150 15% 87%;
+  --secondary-foreground: 165 30% 16%;
+
+  --muted: 150 15% 87%;
+  --muted-foreground: 165 18% 32%;
+
+  --accent: 162 68% 28%;
+  --accent-foreground: 150 30% 98%;
+  --accent-muted: 155 22% 85%;
+  --accent-bright: 162 55% 38%;
+
+  --destructive: 0 72% 45%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 150 14% 76%;
+  --input: 150 14% 76%;
+  --ring: 162 68% 28%;
+
+  --radius: 0.5rem;
+
+  /* Legacy RGB helpers (kept for gradual migration) */
+  --foreground-rgb: 18, 36, 30;
+  --background-rgb: 232, 240, 236;
+  --accent-color: 20, 115, 90;
+  --glow-rgb: 20, 115, 90;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -18,62 +61,64 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
 }
 
-
-
 .accent-text {
-  color: rgb(var(--accent-color));
+  color: hsl(var(--accent));
 }
 
 .accent-gradient {
-  background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
+  background: linear-gradient(
+    90deg,
+    hsl(162 68% 28%) 0%,
+    hsl(155 55% 40%) 100%
+  );
 }
 
 .nav-icon {
-  @apply w-6 h-6 text-white hover:text-purple-500 transition-colors;
+  @apply w-6 h-6 text-foreground hover:text-brand-700 transition-colors;
 }
 
 .section-title {
-  @apply text-3xl font-bold mb-6;
+  @apply text-3xl font-bold mb-6 text-foreground;
 }
 
 .section-subtitle {
-  @apply text-purple-500 font-semibold;
+  @apply text-brand-700 font-semibold;
 }
 
 .card {
-  @apply bg-zinc-900/90 backdrop-blur-sm rounded-lg p-4 hover:bg-zinc-800/90 transition-colors;
+  @apply bg-surface/90 backdrop-blur-sm rounded-lg p-4 hover:bg-surface-elevated/90 transition-colors;
 }
 
 .tool-card {
-  @apply bg-zinc-900 rounded-lg p-4 flex items-center gap-3 hover:bg-zinc-800 transition-colors;
+  @apply bg-surface rounded-lg p-4 flex items-center gap-3 hover:bg-surface-elevated transition-colors;
 }
 
 .faq-item {
-  @apply border-b border-zinc-800 py-4;
+  @apply border-b border-border py-4;
 }
 
 .faq-question {
-  @apply flex justify-between items-center w-full text-left py-2 text-white hover:text-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded;
+  @apply flex justify-between items-center w-full text-left py-2 text-foreground hover:text-brand-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:rounded;
 }
 
 .profile-card {
-  @apply bg-zinc-900/90 backdrop-blur-sm rounded-lg p-6 sticky top-24;
+  @apply bg-surface/90 backdrop-blur-sm rounded-lg p-6 sticky top-24;
 }
 
 .profile-social-icon {
-  @apply w-5 h-5 text-zinc-400 hover:text-purple-500 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded;
+  @apply w-5 h-5 text-muted-foreground hover:text-brand-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:rounded;
 }
 
 .cta-button {
-  @apply bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md transition-all;
+  @apply bg-brand-600 hover:bg-brand-700 text-brand-foreground font-medium py-2 px-6 rounded-md transition-all;
 }
 
 .outline-button {
-  @apply border border-purple-600 text-white font-medium py-2 px-6 rounded-md hover:bg-purple-600/10 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900;
+  @apply border border-brand-500 text-foreground font-medium py-2 px-6 rounded-md hover:bg-brand-600/10 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface;
 }
 
 @keyframes pulse {
@@ -103,5 +148,3 @@ body {
 .animate-pulse-slow {
   animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-
-

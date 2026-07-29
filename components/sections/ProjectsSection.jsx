@@ -68,7 +68,7 @@ export default function ProjectsSection({ projects }) {
     >
       <h2 id="projects-heading" className="section-title">
         Recent Projects <br />
-        and <span className="text-purple-500">Achievements</span>
+        and <span className="text-brand-500">Achievements</span>
       </h2>
 
       <motion.div className="flex flex-wrap gap-4 mb-10" variants={fadeInUp}>
@@ -76,7 +76,7 @@ export default function ProjectsSection({ projects }) {
           <button
             key={category}
             className={`px-4 py-2 rounded-full ${
-              filter === category ? "bg-purple-600" : "bg-zinc-800"
+              filter === category ? "bg-brand-600" : "bg-surface-elevated"
             } transition-colors`}
             onClick={() => setFilter(category)}
           >
@@ -89,11 +89,11 @@ export default function ProjectsSection({ projects }) {
         {displayProjects.map((project) => (
           <motion.div
             key={project.id}
-            className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden group transition-all duration-300 hover:border-zinc-700 hover:-translate-y-1 flex flex-col"
+            className="bg-surface border border-border rounded-lg overflow-hidden group transition-all duration-300 hover:border-border hover:-translate-y-1 flex flex-col"
             variants={fadeInUp}
           >
-            <Link href={project.link || "#"} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-purple-500 focus:rounded-lg">
-              <div className="relative h-52 w-full overflow-hidden bg-zinc-900 border-b border-zinc-800">
+            <Link href={project.link || "#"} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-brand-500 focus:rounded-lg">
+              <div className="relative h-52 w-full overflow-hidden bg-surface border-b border-border">
                 <Image
                   src={project.cover?.url || project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -103,21 +103,21 @@ export default function ProjectsSection({ projects }) {
                   loading="lazy"
                 />
                 {project.category && (
-                   <div className="absolute top-4 right-4 z-20 bg-zinc-900/90 border border-zinc-700 text-xs font-medium px-3 py-1 rounded-lg text-zinc-300 capitalize">
+                   <div className="absolute top-4 right-4 z-20 bg-surface/90 border border-border text-xs font-medium px-3 py-1 rounded-lg text-muted-foreground capitalize">
                       {project.category}
                    </div>
                 )}
               </div>
               
               <div className="p-5 flex flex-col flex-grow">
-                <h3 className="font-bold text-xl mb-2 text-zinc-100 group-hover:text-purple-400 transition-colors duration-300">{project.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">{project.description}</p>
+                <h3 className="font-bold text-xl mb-2 text-foreground group-hover:text-brand-700 transition-colors duration-300">{project.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">{project.description}</p>
                 
-                <div className="mt-auto pt-4 border-t border-zinc-800 flex items-center justify-between text-sm">
-                    <span className="text-zinc-500 font-medium flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calendar"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>{project.date || "2024"}</span>
-                    <div className="flex items-center text-purple-500 font-medium">
-                      <span className="mr-2 group-hover:text-purple-400 transition-colors">View</span>
-                      <div className="w-7 h-7 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                <div className="mt-auto pt-4 border-t border-border flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground font-medium flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calendar"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>{project.date || "2024"}</span>
+                    <div className="flex items-center text-brand-500 font-medium">
+                      <span className="mr-2 group-hover:text-brand-700 transition-colors">View</span>
+                      <div className="w-7 h-7 rounded-lg bg-surface-elevated flex items-center justify-center group-hover:bg-brand-500 group-hover:text-brand-foreground transition-colors duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-0.5 transition-transform duration-300"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                       </div>
                     </div>

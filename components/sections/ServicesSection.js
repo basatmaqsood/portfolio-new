@@ -82,7 +82,7 @@ export default function ServicesSection({ services }) {
           return (
             <motion.div
               key={service.id || index}
-              className="group relative bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-purple-500/30 hover:bg-zinc-800/80 transition-colors duration-300 overflow-hidden"
+              className="group relative bg-surface p-6 rounded-lg border border-border hover:border-brand-500/30 hover:bg-surface-elevated/80 transition-colors duration-300 overflow-hidden"
               custom={index}
               variants={reduce ? undefined : cardIn}
               initial={reduce ? false : "hidden"}
@@ -90,7 +90,7 @@ export default function ServicesSection({ services }) {
               viewport={viewport}
             >
               <motion.div
-                className="absolute left-0 top-0 bottom-0 w-0.5 bg-purple-500 origin-top"
+                className="absolute left-0 top-0 bottom-0 w-0.5 bg-brand-500 origin-top"
                 initial={reduce ? false : { scaleY: 0 }}
                 whileInView={reduce ? undefined : { scaleY: 1 }}
                 viewport={viewport}
@@ -100,7 +100,7 @@ export default function ServicesSection({ services }) {
 
               <div className="flex items-start gap-4 pl-2">
                 <motion.div
-                  className="text-purple-500 mt-1 shrink-0 w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors"
+                  className="text-brand-500 mt-1 shrink-0 w-10 h-10 rounded-lg bg-brand-600/10 flex items-center justify-center group-hover:bg-brand-600/15 transition-colors"
                   variants={reduce ? undefined : iconIn}
                   whileHover={{ scale: 1.08 }}
                   transition={{ type: "spring", stiffness: 300, damping: 16 }}
@@ -109,9 +109,9 @@ export default function ServicesSection({ services }) {
                 </motion.div>
 
                 <motion.div className="min-w-0 flex-1" variants={reduce ? undefined : textIn}>
-                  <h3 className="text-xl font-bold mb-2 text-zinc-100">{service.title}</h3>
-                  <div className="w-8 h-px bg-purple-500/70 mb-3" aria-hidden />
-                  <p className="text-zinc-400 leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
+                  <div className="w-8 h-px bg-brand-500/70 mb-3" aria-hidden />
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </motion.div>
               </div>
             </motion.div>

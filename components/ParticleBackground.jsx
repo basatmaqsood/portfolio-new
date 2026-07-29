@@ -9,15 +9,16 @@ function ParticleBackground() {
   const animationFrameRef = useRef(0)
   const mouseRef = useRef({ x: null, y: null, radius: 150 })
 
-  // Updated colors to gray and purple dark tones
-  const colors = ["#4B5563", "#6B7280", "#4A3F6B", "#2D3748", "#5B21B6", "#4C1D95"]
+  // Soft forest tones for light editorial background
+  const colors = ["#b3e6d4", "#7fd0b4", "#45b392", "#1f8f70", "#14735a", "#0f5c49"]
 
   // Initialize particles
   const initParticles = useCallback(() => {
     if (!dimensions.width || !dimensions.height) return
 
     const particles = []
-    const particleCount = Math.floor((dimensions.width * dimensions.height) / 10000)
+    // lighter particle field
+    const particleCount = Math.floor((dimensions.width * dimensions.height) / 9000)
 
     for (let i = 0; i < particleCount; i++) {
       const depth = Math.random() * 3 + 1
@@ -26,11 +27,11 @@ function ParticleBackground() {
         y: Math.random() * dimensions.height,
         size: depth * 1.5,
         baseSize: depth * 1.5, // Store original size for hover effect
-        speedX: (Math.random() - 0.5) * (0.2 * depth),
-        speedY: (Math.random() - 0.5) * (0.2 * depth),
+        speedX: (Math.random() - 0.5) * (0.7 * depth),
+        speedY: (Math.random() - 0.5) * (0.7 * depth),
         color: colors[Math.floor(Math.random() * colors.length)],
-        opacity: 0.1 + Math.random() * 0.4,
-        baseOpacity: 0.1 + Math.random() * 0.4, // Store original opacity for hover effect
+        opacity: 0.15 + Math.random() * 0.45,
+        baseOpacity: 0.15 + Math.random() * 0.45,
         depth,
         // Add properties for hover effect
         originalX: 0,
@@ -113,7 +114,7 @@ function ParticleBackground() {
           particle.speedY += repulsionY * 0.2
 
           // Limit max speed during repulsion
-          const maxSpeed = 2 * particle.depth
+          const maxSpeed = 3.5 * particle.depth
           particle.speedX = Math.max(Math.min(particle.speedX, maxSpeed), -maxSpeed)
           particle.speedY = Math.max(Math.min(particle.speedY, maxSpeed), -maxSpeed)
 
@@ -135,12 +136,12 @@ function ParticleBackground() {
       }
 
       // Occasionally change direction slightly for more natural movement
-      if (Math.random() < 0.01) {
-        particle.speedX += (Math.random() - 0.5) * 0.1
-        particle.speedY += (Math.random() - 0.5) * 0.1
+      if (Math.random() < 0.03) {
+        particle.speedX += (Math.random() - 0.5) * 0.35
+        particle.speedY += (Math.random() - 0.5) * 0.35
 
         // Limit max speed
-        const maxSpeed = 0.5 * particle.depth
+        const maxSpeed = 1.6 * particle.depth
         particle.speedX = Math.max(Math.min(particle.speedX, maxSpeed), -maxSpeed)
         particle.speedY = Math.max(Math.min(particle.speedY, maxSpeed), -maxSpeed)
       }
@@ -223,9 +224,9 @@ function ParticleBackground() {
     <div className="fixed inset-0 z-0" aria-hidden="true">
       <canvas ref={canvasRef} className="absolute inset-0" />
 
-      {/* Gradient Effects */}
-      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-r from-purple-900/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-l from-gray-800/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+      {/* Soft atmospheric washes */}
+      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-r from-brand-200/40 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-l from-brand-100/50 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
     </div>
   )
 }

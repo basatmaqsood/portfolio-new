@@ -27,10 +27,10 @@ export default function ProfileCard({ profileData, socialLinks }) {
   if (!profileData) {
     return (
       <div className="profile-card animate-pulse" aria-busy="true" aria-label="Loading profile information">
-        <div className="w-24 h-24 bg-zinc-800 rounded-full mx-auto mb-4"></div>
-        <div className="h-6 bg-zinc-800 rounded w-3/4 mx-auto mb-2"></div>
-        <div className="h-4 bg-zinc-800 rounded w-1/2 mx-auto mb-4"></div>
-        <div className="h-10 bg-zinc-800 rounded w-full mb-4"></div>
+        <div className="w-24 h-24 bg-surface-elevated rounded-full mx-auto mb-4"></div>
+        <div className="h-6 bg-surface-elevated rounded w-3/4 mx-auto mb-2"></div>
+        <div className="h-4 bg-surface-elevated rounded w-1/2 mx-auto mb-4"></div>
+        <div className="h-10 bg-surface-elevated rounded w-full mb-4"></div>
       </div>
     )
   }
@@ -40,13 +40,13 @@ export default function ProfileCard({ profileData, socialLinks }) {
 
   return (
     <motion.div
-      className="bg-zinc-900 border border-zinc-800 rounded-none p-7 sticky top-24 transition-colors duration-300 hover:border-zinc-700 flex flex-col items-center"
+      className="bg-surface border border-border rounded-none p-7 sticky top-24 transition-colors duration-300 hover:border-border flex flex-col items-center"
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
     >
       <motion.div
-        className="relative w-28 h-28 rounded-none overflow-hidden mb-5 border-2 border-zinc-800"
+        className="relative w-28 h-28 rounded-none overflow-hidden mb-5 border-2 border-border"
         variants={clipReveal}
       >
         <Image
@@ -61,7 +61,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
       </motion.div>
 
       <motion.h2
-        className="text-2xl font-bold text-zinc-100 tracking-tight mb-2 text-center"
+        className="text-2xl font-bold text-foreground tracking-tight mb-2 text-center"
         variants={childReveal}
       >
         {profileData?.Name || "Basat Maqsood"}
@@ -71,13 +71,13 @@ export default function ProfileCard({ profileData, socialLinks }) {
         <TypeAnimation
           sequence={["Frontend Developer", 4000, "MERN Stack Developer", 4000, "Software Engineer", 4000]}
           speed={50}
-          className="text-purple-400 font-medium mb-5 text-base text-center block"
+          className="text-brand-700 font-medium mb-5 text-base text-center block"
           repeat={Infinity}
         />
       </motion.div>
 
-      <motion.p className="text-zinc-400 text-sm flex items-center gap-2 mb-6" variants={childReveal}>
-        <MapPin size={16} className="text-purple-500" />
+      <motion.p className="text-muted-foreground text-sm flex items-center gap-2 mb-6" variants={childReveal}>
+        <MapPin size={16} className="text-brand-500" />
         {profileData?.address || "Islamabad, Pakistan"}
       </motion.p>
 
@@ -86,7 +86,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
           <Magnetic key={index} strength={0.4}>
             <a
               href={social.link}
-              className="w-10 h-10 rounded-none bg-zinc-800 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors duration-300"
+              className="w-10 h-10 rounded-none bg-surface-elevated border border-border flex items-center justify-center text-muted-foreground hover:bg-surface-hover hover:text-brand-700 transition-colors duration-300"
               aria-label={social.title}
               title={social.title}
               target="_blank"
@@ -103,7 +103,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
         <Magnetic strength={0.25} className="w-full">
           <Link
             href="/contact"
-            className="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-medium py-2.5 px-6 rounded-none transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900"
+            className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-brand-foreground font-medium py-2.5 px-6 rounded-none transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface"
             data-cursor="hover"
           >
             Let&apos;s Talk
@@ -118,7 +118,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
               href={profileData.cv?.[0]?.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center py-2.5 px-6 rounded-none border border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white hover:border-zinc-500 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full text-center py-2.5 px-6 rounded-none border border-border text-muted-foreground hover:bg-surface-elevated hover:text-foreground hover:border-brand-500/50 transition-all duration-300 flex items-center justify-center gap-2"
               aria-label="Download CV"
               data-cursor="hover"
             >

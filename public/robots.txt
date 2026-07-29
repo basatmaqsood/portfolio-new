@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://basatmaqsood.com
+
+# Sitemaps
+Sitemap: https://basatmaqsood.com/sitemap.xml

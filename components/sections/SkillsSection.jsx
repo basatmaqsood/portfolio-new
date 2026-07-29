@@ -74,7 +74,7 @@ export default function SkillsSection({ skills }) {
               <Magnetic strength={0.3}>
                 <button
                   className={`relative px-4 py-2 rounded-full overflow-hidden transition-colors ${
-                    activeCategory === category ? "text-white" : "bg-zinc-800 text-zinc-300"
+                    activeCategory === category ? "text-brand-foreground" : "bg-surface-elevated text-muted-foreground"
                   }`}
                   onClick={() => setActiveCategory(category)}
                   data-cursor="hover"
@@ -82,7 +82,7 @@ export default function SkillsSection({ skills }) {
                   {activeCategory === category && (
                     <motion.span
                       layoutId="skillChip"
-                      className="absolute inset-0 bg-purple-600 rounded-full"
+                      className="absolute inset-0 bg-brand-500 rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 28 }}
                     />
                   )}
@@ -111,12 +111,12 @@ export default function SkillsSection({ skills }) {
             >
               <Magnetic strength={0.18}>
                 <div
-                  className="relative bg-zinc-900 p-4 rounded-lg text-center border border-zinc-800/60 hover:border-purple-500/40 hover:bg-zinc-800/90 transition-colors overflow-hidden group"
+                  className="relative bg-surface p-4 rounded-lg text-center border border-border/60 hover:border-brand-500/40 hover:bg-surface-elevated/90 transition-colors overflow-hidden group"
                   data-cursor="hover"
                 >
                   {!reduce && (
                     <motion.div
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-500/10 via-transparent to-transparent"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: [0, 1, 0] }}
                       viewport={viewport}
@@ -125,9 +125,9 @@ export default function SkillsSection({ skills }) {
                     />
                   )}
 
-                  <span className="relative z-10 block text-purple-500 font-medium">{skill.name}</span>
-                  <div className="mx-auto mt-2 mb-1 h-px w-8 bg-purple-500/60" aria-hidden />
-                  <p className="relative z-10 text-xs text-zinc-400 mt-1">{skill.category}</p>
+                  <span className="relative z-10 block text-brand-500 font-medium">{skill.name}</span>
+                  <div className="mx-auto mt-2 mb-1 h-px w-8 bg-brand-500/60" aria-hidden />
+                  <p className="relative z-10 text-xs text-muted-foreground mt-1">{skill.category}</p>
                 </div>
               </Magnetic>
             </motion.div>

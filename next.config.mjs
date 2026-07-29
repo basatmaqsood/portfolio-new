@@ -20,6 +20,15 @@ const nextConfig = {
   compiler: {
     // removeConsole: process.env.NODE_ENV === 'production',
   },
+  async redirects() {
+    return [
+      {
+        source: "/about",
+        destination: "/",
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;

@@ -92,7 +92,7 @@ export default function ContactContent({ profileData, contactInfo }) {
       <div className="mb-12">
         <SplitText as="h1" text="Contact" className="text-4xl font-bold mb-4 tracking-tight" />
         <Reveal variant="blur">
-          <p className="text-zinc-400">Feel free to reach out for collaborations or inquiries.</p>
+          <p className="text-muted-foreground">Feel free to reach out for collaborations or inquiries.</p>
         </Reveal>
       </div>
 
@@ -105,44 +105,44 @@ export default function ContactContent({ profileData, contactInfo }) {
           <TiltCard key={index} maxTilt={6} className="rounded-none">
             <a
               href={item.link}
-              className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 p-4 rounded-none transition-colors h-full"
+              className="flex items-center gap-4 bg-surface border border-border p-4 rounded-none transition-colors h-full"
               data-cursor="hover"
             >
-              <div className="text-purple-500 shrink-0">{item.icon}</div>
+              <div className="text-brand-500 shrink-0">{item.icon}</div>
               <div className="min-w-0">
-                <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">{item.title}</p>
-                <p className="text-sm font-medium text-zinc-200 truncate">{item.value}</p>
+                <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">{item.title}</p>
+                <p className="text-sm font-medium text-foreground/90 truncate">{item.value}</p>
               </div>
             </a>
           </TiltCard>
         ))}
       </motion.div>
 
-      <Reveal variant="clip" className="bg-zinc-900 border border-zinc-800 p-8 rounded-none">
+      <Reveal variant="clip" className="bg-surface border border-border p-8 rounded-none">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div className="space-y-2" variants={childReveal}>
-              <label className="text-xs font-bold uppercase tracking-widest text-white">Name</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-foreground">Name</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full bg-zinc-900 border border-zinc-800 rounded-none p-3 text-zinc-100 focus:border-purple-500 outline-none transition-all placeholder:text-zinc-100/50"
+                className="w-full bg-surface border border-border rounded-none p-3 text-foreground focus:border-brand-500 outline-none transition-all placeholder:text-foreground/50"
                 placeholder="Your name"
                 data-cursor="hover"
               />
             </motion.div>
             <motion.div className="space-y-2" variants={childReveal}>
-              <label className="text-xs font-bold uppercase tracking-widest text-white">Email</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-foreground">Email</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full bg-zinc-900 border border-zinc-800 rounded-none p-3 text-zinc-100 focus:border-purple-500 outline-none transition-all placeholder:text-zinc-100/50"
+                className="w-full bg-surface border border-border rounded-none p-3 text-foreground focus:border-brand-500 outline-none transition-all placeholder:text-foreground/50"
                 placeholder="Your email"
                 data-cursor="hover"
               />
@@ -150,28 +150,28 @@ export default function ContactContent({ profileData, contactInfo }) {
           </div>
 
           <motion.div className="space-y-2" variants={childReveal}>
-            <label className="text-xs font-bold uppercase tracking-widest text-white">Subject</label>
+            <label className="text-xs font-bold uppercase tracking-widest text-foreground">Subject</label>
             <input
               type="text"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-none p-3 text-zinc-100 focus:border-purple-500 outline-none transition-all placeholder:text-zinc-100/50"
+              className="w-full bg-surface border border-border rounded-none p-3 text-foreground focus:border-brand-500 outline-none transition-all placeholder:text-foreground/50"
               placeholder="Subject"
               data-cursor="hover"
             />
           </motion.div>
 
           <motion.div className="space-y-2" variants={childReveal}>
-            <label className="text-xs font-bold uppercase tracking-widest text-white">Message</label>
+            <label className="text-xs font-bold uppercase tracking-widest text-foreground">Message</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               required
               rows={6}
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-none p-3 text-zinc-100 focus:border-purple-500 outline-none transition-all resize-none placeholder:text-zinc-100/50"
+              className="w-full bg-surface border border-border rounded-none p-3 text-foreground focus:border-brand-500 outline-none transition-all resize-none placeholder:text-foreground/50"
               placeholder="Your message"
               data-cursor="hover"
             />
@@ -180,7 +180,7 @@ export default function ContactContent({ profileData, contactInfo }) {
           <Magnetic strength={0.2}>
             <button
               type="submit"
-              className="w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold uppercase tracking-widest text-xs py-4 px-10 rounded-none transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full md:w-auto bg-brand-600 hover:bg-brand-700 text-brand-foreground font-bold uppercase tracking-widest text-xs py-4 px-10 rounded-none transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               disabled={isSubmitting}
               data-cursor="hover"
             >

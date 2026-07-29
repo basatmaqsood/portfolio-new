@@ -38,18 +38,18 @@ export default function ToolsSection() {
     >
       <h2 id="tools-heading" className="section-title">
         Top-Tier Tools for <br />
-        Exceptional <span className="text-purple-500">Results</span>
+        Exceptional <span className="text-brand-500">Results</span>
       </h2>
 
       <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-4" variants={staggerContainer}>
         {tools.map((tool) => (
           <motion.div key={tool.id} className="tool-card" variants={fadeInUp} whileHover={{ y: -3 }}>
-            <div className="w-10 h-10 bg-zinc-800 rounded-md flex items-center justify-center">
+            <div className="w-10 h-10 bg-surface-elevated rounded-md flex items-center justify-center">
               <Image src={tool.icon || "/placeholder.svg"} alt={tool.name} width={24} height={24} loading="lazy" />
             </div>
             <div>
               <h3 className="font-medium">{tool.name}</h3>
-              <p className="text-zinc-400 text-sm">{tool.category}</p>
+              <p className="text-muted-foreground text-sm">{tool.category}</p>
             </div>
           </motion.div>
         ))}

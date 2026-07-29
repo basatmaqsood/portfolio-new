@@ -116,22 +116,22 @@ export default function MediaCard({
         href={href}
         target={external ? "_blank" : undefined}
         rel={external ? "noopener noreferrer" : undefined}
-        className="bg-zinc-900 border border-zinc-800 rounded-none overflow-hidden group flex flex-col hover:border-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
+        className="bg-surface border border-border rounded-none overflow-hidden group flex flex-col hover:border-border transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500"
       >
-        <div className="relative h-56 w-full overflow-hidden border-b border-zinc-800">
+        <div className="relative h-56 w-full overflow-hidden border-b border-border">
           {image}
         </div>
         <div className="px-5 py-4 flex flex-col gap-2.5">
           {badge && (
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-purple-400">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-700">
               {badge}
             </span>
           )}
-          <TitleTag className="font-bold text-lg text-zinc-100 line-clamp-2 leading-snug">{title}</TitleTag>
-          <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">{description}</p>
-          <div className="pt-3 mt-1 border-t border-zinc-800/50 flex items-center justify-between">
-            <span className="text-purple-500 font-bold tracking-widest uppercase text-[10px]">{ctaLabel}</span>
-            <div className="w-7 h-7 bg-zinc-800 flex items-center justify-center text-purple-400">
+          <TitleTag className="font-bold text-lg text-foreground line-clamp-2 leading-snug">{title}</TitleTag>
+          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">{description}</p>
+          <div className="pt-3 mt-1 border-t border-border/50 flex items-center justify-between">
+            <span className="text-brand-500 font-bold tracking-widest uppercase text-[10px]">{ctaLabel}</span>
+            <div className="w-7 h-7 bg-surface-elevated flex items-center justify-center text-brand-700">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
             </div>
           </div>
@@ -142,14 +142,14 @@ export default function MediaCard({
 
   return (
     <motion.article
-      className="relative bg-zinc-900 border border-zinc-800 rounded-none overflow-hidden group flex flex-col hover:border-purple-500/40 transition-colors duration-500"
+      className="relative bg-surface border border-border rounded-none overflow-hidden group flex flex-col hover:border-brand-500/40 transition-colors duration-500"
       initial="hidden"
       whileInView="visible"
       viewport={viewport}
       variants={cardShell}
     >
       <svg
-        className="pointer-events-none absolute top-0 left-0 w-10 h-10 z-30 text-purple-500"
+        className="pointer-events-none absolute top-0 left-0 w-10 h-10 z-30 text-brand-500"
         viewBox="0 0 64 64"
         fill="none"
         aria-hidden
@@ -157,7 +157,7 @@ export default function MediaCard({
         <motion.path d="M0 22 V0 H22" stroke="currentColor" strokeWidth="1.5" variants={cornerSweep} />
       </svg>
       <svg
-        className="pointer-events-none absolute bottom-0 right-0 w-10 h-10 z-30 text-purple-500 rotate-180"
+        className="pointer-events-none absolute bottom-0 right-0 w-10 h-10 z-30 text-brand-500 rotate-180"
         viewBox="0 0 64 64"
         fill="none"
         aria-hidden
@@ -169,12 +169,12 @@ export default function MediaCard({
         href={href}
         target={external ? "_blank" : undefined}
         rel={external ? "noopener noreferrer" : undefined}
-        className="flex flex-col focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900"
+        className="flex flex-col focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface"
         data-cursor="hover"
       >
-        <div className="relative h-56 w-full overflow-hidden border-b border-zinc-800 bg-zinc-950">
+        <div className="relative h-56 w-full overflow-hidden border-b border-border bg-background">
           <motion.div
-            className="absolute inset-0 z-20 bg-zinc-950"
+            className="absolute inset-0 z-20 bg-background"
             style={{ transformOrigin: fromRight ? "right center" : "left center" }}
             variants={curtain(fromRight)}
             aria-hidden
@@ -198,7 +198,7 @@ export default function MediaCard({
 
         <div className="px-5 py-4 flex flex-col relative pl-6 gap-2.5">
           <motion.div
-            className="absolute left-0 top-4 bottom-4 w-0.5 bg-purple-500 origin-top"
+            className="absolute left-0 top-4 bottom-4 w-0.5 bg-brand-500 origin-top"
             variants={{
               hidden: { scaleY: 0 },
               visible: {
@@ -210,11 +210,11 @@ export default function MediaCard({
           />
 
           <motion.div className="flex items-center gap-2.5" variants={eyebrowIn}>
-            <span className="font-mono text-[10px] tracking-[0.2em] text-zinc-500">{num}</span>
+            <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground">{num}</span>
             {badge && (
               <>
-                <span className="h-px w-4 bg-zinc-700" aria-hidden />
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-purple-400">
+                <span className="h-px w-4 bg-surface-hover" aria-hidden />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-700">
                   {badge}
                 </span>
               </>
@@ -223,24 +223,24 @@ export default function MediaCard({
 
           <div className="overflow-hidden">
             <motion.div variants={titleReveal}>
-              <TitleTag className="font-bold text-lg leading-snug text-zinc-100 group-hover:text-purple-400 transition-colors duration-300 line-clamp-2">
+              <TitleTag className="font-bold text-lg leading-snug text-foreground group-hover:text-brand-700 transition-colors duration-300 line-clamp-2">
                 {title}
               </TitleTag>
             </motion.div>
           </div>
 
-          <motion.p className="text-zinc-400 text-sm leading-relaxed line-clamp-2" variants={contentBlock}>
+          <motion.p className="text-muted-foreground text-sm leading-relaxed line-clamp-2" variants={contentBlock}>
             {description}
           </motion.p>
 
           <motion.div
-            className="pt-3 mt-0.5 border-t border-zinc-800/60 flex items-center justify-between gap-3"
+            className="pt-3 mt-0.5 border-t border-border/60 flex items-center justify-between gap-3"
             variants={footerRise}
           >
-            <span className="text-purple-500 font-bold tracking-[0.18em] uppercase text-[10px] group-hover:text-purple-400 transition-colors">
+            <span className="text-brand-500 font-bold tracking-[0.18em] uppercase text-[10px] group-hover:text-brand-700 transition-colors">
               {ctaLabel}
             </span>
-            <div className="w-7 h-7 rounded-none bg-zinc-800 flex items-center justify-center text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 group-hover:translate-x-0.5">
+            <div className="w-7 h-7 rounded-none bg-surface-elevated flex items-center justify-center text-brand-700 group-hover:bg-brand-500 group-hover:text-brand-foreground transition-all duration-300 group-hover:translate-x-0.5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"

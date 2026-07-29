@@ -68,7 +68,7 @@ export function AccentSplit({
   accent,
   after = "",
   className = "",
-  accentClassName = "text-purple-500",
+  accentClassName = "text-brand-700",
 }) {
   const reduce = useReducedMotion()
 

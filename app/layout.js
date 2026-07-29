@@ -106,14 +106,14 @@ export default async function RootLayout({ children }) {
       </head>
 
       <body
-        className={`${inter.className} bg-black text-white overflow-x-hidden`}
+        className={`${inter.className} bg-background text-foreground overflow-x-hidden`}
       >
         {/* <Background /> */}
         <ParticleBackground />
         <div className="relative z-10">
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-500 focus:text-brand-foreground focus:rounded"
           >
             Skip to main content
           </a>

@@ -1,9 +1,19 @@
 import { Suspense } from "react"
-import { getProfileData,  getServices, getSkills } from "@/lib/api"
+import dynamic from "next/dynamic"
+import { getProfileData, getServices, getSkills, getCertificates } from "@/lib/api"
 import BioCard from "@/components/BioCard"
 import ContactSection from "@/components/sections/ContactSection"
-import ServicesSection from "@/components/sections/ServicesSection"
 import SkillsSection from "@/components/sections/SkillsSection"
+import CertificatesSection from "@/components/sections/CertificatesSection"
+
+const ServicesSection = dynamic(
+  () => import("@/components/sections/ServicesSection"),
+  {
+    loading: () => (
+      <div className="h-40 bg-surface rounded-lg animate-pulse mb-20" aria-busy="true" />
+    ),
+  }
+)
 
 export const metadata = {
   title: "Basat Maqsood - Software Engineer",
@@ -47,52 +57,32 @@ export const metadata = {
 };
 
 export default async function Home() {
-  // Fetch data at build time with ISR
-  const [profileData, services, skills] = await Promise.all([
+  const [profileData, services, skills, certificates] = await Promise.all([
     getProfileData(),
-
     getServices(),
-    getSkills()
-  ]);
-  
+    getSkills(),
+    getCertificates(),
+  ])
 
   return (
     <>
-      {/* Bio Card Section */}
       <section className="mb-20" aria-labelledby="about-heading">
         <BioCard profileData={profileData} />
       </section>
 
-      {/* Services Section */}
-      <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
-        <ServicesSection services={services} />
-      </Suspense>
-
-      {/* Projects Section */}
-      {/* <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
-        <ProjectsSection projects={projects} />
-      </Suspense> */}
-
-      {/* Skills Section */}
-      <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
+      <Suspense fallback={<div className="h-40 bg-surface rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
         <SkillsSection skills={skills} />
       </Suspense>
 
-      {/* Blog Section */}
-      {/* <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
-        <BlogSection blogPosts={blogPosts} />
-      </Suspense> */}
-
-      {/* FAQ Section */}
-      {/* <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
-        <FaqSection />
-      </Suspense> */}
-
-      {/* Contact Section */}
-      <Suspense fallback={<div className="h-40 bg-zinc-900 rounded-lg animate-pulse mb-10" aria-busy="true"></div>}>
-        <ContactSection />
+      <Suspense fallback={<div className="h-40 bg-surface rounded-lg animate-pulse mb-20" aria-busy="true"></div>}>
+        <CertificatesSection certificates={certificates} />
       </Suspense>
 
+      <ServicesSection services={services} />
+
+      <Suspense fallback={<div className="h-40 bg-surface rounded-lg animate-pulse mb-10" aria-busy="true"></div>}>
+        <ContactSection />
+      </Suspense>
     </>
   )
 }

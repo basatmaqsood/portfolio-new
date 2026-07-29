@@ -12,13 +12,13 @@ function Background() {
         {gridItems.map((i) => (
           <div
             key={i}
-            className="border border-purple-500/40 rounded-sm transition-colors duration-1000 hover:border-purple-500/70"
+            className="border border-brand-500/40 rounded-sm transition-colors duration-1000 hover:border-brand-500/70"
           />
         ))}
       </div>
 
       {/* Gradient Effects */}
-      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-r from-purple-500/30 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-r from-brand-500/30 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-l from-cyan-500/30 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
     </div>
   )

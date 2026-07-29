@@ -64,7 +64,7 @@ export default function FaqSection() {
     >
       <h2 id="faq-heading" className="section-title">
         Frequently <br />
-        Asked <span className="text-purple-500">Questions</span>
+        Asked <span className="text-brand-500">Questions</span>
       </h2>
 
       <motion.div variants={staggerContainer}>
@@ -86,7 +86,7 @@ export default function FaqSection() {
             {activeQuestion === index && (
               <motion.div
                 id={`faq-answer-${faq.id}`}
-                className="py-3 text-zinc-400"
+                className="py-3 text-muted-foreground"
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}

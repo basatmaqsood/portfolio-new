@@ -53,7 +53,7 @@ export default function BlogSection({ blogPosts }) {
     >
       <h2 id="blog-heading" className="section-title">
         Design Thoughts <br />
-        and <span className="text-purple-500">Perspectives</span>
+        and <span className="text-brand-500">Perspectives</span>
       </h2>
 
       <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={staggerContainer}>
@@ -69,12 +69,12 @@ export default function BlogSection({ blogPosts }) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   loading="lazy"
                 />
-                <div className="absolute bottom-3 left-3 bg-zinc-900/80 backdrop-blur-sm text-xs px-2 py-1 rounded">
+                <div className="absolute bottom-3 left-3 bg-surface/80 backdrop-blur-sm text-xs px-2 py-1 rounded">
                   {post.publish_date || "Recent"}
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-purple-500 transition-colors">{post.title}</h3>
-              <p className="text-zinc-400">{post.description?.substring(0, 120)}...</p>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-brand-500 transition-colors">{post.title}</h3>
+              <p className="text-muted-foreground">{post.description?.substring(0, 120)}...</p>
             </Link>
           </motion.article>
         ))}

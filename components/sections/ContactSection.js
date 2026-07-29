@@ -30,9 +30,9 @@ export default function ContactSection() {
       variants={staggerContainer}
       aria-labelledby="contact-heading"
     >
-      <div className="bg-zinc-900 rounded-2xl p-10 relative overflow-hidden shadow-xl">
+      <div className="bg-surface rounded-2xl p-10 relative overflow-hidden shadow-xl">
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-900 to-purple-900/30 opacity-80"
+          className="absolute inset-0 bg-gradient-to-br from-surface via-surface to-brand-900/30 opacity-80"
           animate={
             reduce
               ? undefined
@@ -46,19 +46,19 @@ export default function ContactSection() {
 
         <div className="absolute top-10 right-10 opacity-20">
           <motion.div variants={floatingVariants} initial="initial" animate="animate">
-            <Sparkles size={40} className="text-purple-400" />
+            <Sparkles size={40} className="text-brand-700" />
           </motion.div>
         </div>
 
         <div className="absolute bottom-10 left-10 opacity-10">
           <motion.div variants={floatingVariants} initial="initial" animate="animate">
-            <MessageSquare size={60} className="text-purple-400" />
+            <MessageSquare size={60} className="text-brand-700" />
           </motion.div>
         </div>
 
         <div className="relative z-10 max-w-2xl">
           <motion.div variants={childReveal} className="mb-2">
-            <span className="inline-block py-1 px-3 rounded-full bg-purple-900/50 text-purple-300 text-sm font-medium mb-3">
+            <span className="inline-block py-1 px-3 rounded-full bg-brand-100 text-brand-800 text-sm font-medium mb-3">
               Ready to start?
             </span>
           </motion.div>
@@ -66,13 +66,13 @@ export default function ContactSection() {
           <Reveal variant="clip" className="mb-3">
             <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold tracking-tight">
               Let&apos;s create something
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-800">
                 extraordinary together
               </span>
             </h2>
           </Reveal>
 
-          <motion.p className="text-zinc-400 mb-8 text-lg max-w-lg" variants={childReveal}>
+          <motion.p className="text-muted-foreground mb-8 text-lg max-w-lg" variants={childReveal}>
             Unlock the potential of your product with expert design and development. Let&apos;s build something that not
             only meets your goals but creates lasting impressions with your audience.
           </motion.p>
@@ -81,12 +81,12 @@ export default function ContactSection() {
             <Magnetic strength={0.28}>
               <Link href="/contact" data-cursor="hover">
                 <motion.span
-                  className="inline-flex px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600
-                             text-white font-medium rounded-lg items-center gap-2 shadow-lg shadow-purple-900/30
-                             focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-zinc-900"
+                  className="inline-flex px-6 py-3 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600
+                             text-brand-foreground font-medium rounded-lg items-center gap-2 shadow-lg shadow-brand-700/20
+                             focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface"
                   whileHover={{
                     scale: 1.04,
-                    boxShadow: "0 0 28px rgba(168, 85, 247, 0.45)",
+                    boxShadow: "0 0 28px rgba(20, 115, 90, 0.28)",
                   }}
                   whileTap={{ scale: 0.96 }}
                   transition={{ type: "spring", stiffness: 400, damping: 16 }}
@@ -108,17 +108,17 @@ export default function ContactSection() {
           <Magnetic strength={0.45}>
             <motion.a
               href="/contact"
-              className="w-14 h-14 bg-gradient-to-tr from-purple-600 to-purple-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-900/30"
+              className="w-14 h-14 bg-gradient-to-tr from-brand-700 to-brand-500 rounded-full flex items-center justify-center shadow-lg shadow-brand-700/25"
               whileHover={{
                 scale: 1.12,
                 rotate: 90,
-                boxShadow: "0 0 24px rgba(168, 85, 247, 0.55)",
+                boxShadow: "0 0 24px rgba(20, 115, 90, 0.32)",
               }}
               transition={{ type: "spring", stiffness: 300, damping: 12 }}
               data-cursor="hover"
               aria-label="Go to contact"
             >
-              <ChevronUp size={24} className="text-white" aria-hidden="true" />
+              <ChevronUp size={24} className="text-brand-foreground" aria-hidden="true" />
             </motion.a>
           </Magnetic>
         </motion.div>
