@@ -1,19 +1,10 @@
 import { Suspense } from "react"
-import dynamic from "next/dynamic"
 import { getProfileData, getServices, getSkills, getCertificates } from "@/lib/api"
 import BioCard from "@/components/BioCard"
 import ContactSection from "@/components/sections/ContactSection"
 import SkillsSection from "@/components/sections/SkillsSection"
 import CertificatesSection from "@/components/sections/CertificatesSection"
-
-const ServicesSection = dynamic(
-  () => import("@/components/sections/ServicesSection"),
-  {
-    loading: () => (
-      <div className="h-40 bg-surface rounded-lg animate-pulse mb-20" aria-busy="true" />
-    ),
-  }
-)
+import ServicesSection from "@/components/sections/ServicesSection"
 
 export const metadata = {
   title: "Basat Maqsood - Software Engineer",

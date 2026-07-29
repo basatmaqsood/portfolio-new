@@ -1,29 +1,31 @@
 "use client"
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { pageTransition } from "./variants"
+import { easeLuxury } from "./variants"
 
+/**
+ * Soft page entrance without AnimatePresence mode="wait".
+ * Wait-mode + App Router RSC children can leave the next page stuck at opacity 0
+ * (blank screen until hard refresh) — especially on "/".
+ */
 export default function PageTransition({ children }) {
   const pathname = usePathname()
   const reduce = useReducedMotion()
 
   if (reduce) {
-    return <>{children}</>
+    return <div className="w-full">{children}</div>
   }
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={pathname}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={pageTransition}
-        className="w-full"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      key={pathname}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: easeLuxury }}
+      className="w-full"
+    >
+      {children}
+    </motion.div>
   )
 }
