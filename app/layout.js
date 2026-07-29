@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/Background";
 import ParticleBackground from "@/components/ParticleBackground";
-import CustomCursor from "@/components/CustomCursor";
+import ClientPageShell from "@/components/ClientPageShell";
 import Navbar from "@/components/Navbar";
 import ProfileCard from "@/components/ProfileCard";
 import { Suspense } from "react";
@@ -108,8 +108,6 @@ export default async function RootLayout({ children }) {
       <body
         className={`${inter.className} bg-black text-white overflow-x-hidden`}
       >
-        {/* <CustomCursor /> */}
-
         {/* <Background /> */}
         <ParticleBackground />
         <div className="relative z-10">
@@ -140,7 +138,9 @@ export default async function RootLayout({ children }) {
                 </Suspense>
               </div>
               {/* Right Column - Content */}
-              <div className="md:w-3/4">{children}</div>
+              <div className="md:w-3/4">
+                <ClientPageShell>{children}</ClientPageShell>
+              </div>
             </div>
           </main>
           <Footer />

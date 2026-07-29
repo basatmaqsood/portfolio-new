@@ -17,12 +17,9 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  // Add performance optimizations
-  swcMinify: true,
   compiler: {
     // removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Removed the experimental.optimizeCss option that was causing the error
 };
 
 export default nextConfig;

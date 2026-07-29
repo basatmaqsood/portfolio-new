@@ -1,52 +1,85 @@
 "use client"
-import { useEffect, useState, memo } from "react"
+
+import { memo, useEffect, useState } from "react"
+import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion"
+import { useIsTouchDevice } from "@/hooks/useMousePosition"
 
 function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
+  const reduce = useReducedMotion()
+  const isTouch = useIsTouchDevice()
+  const [visible, setVisible] = useState(false)
+  const [hovering, setHovering] = useState(false)
+
+  const rawX = useMotionValue(-100)
+  const rawY = useMotionValue(-100)
+  const dotX = useSpring(rawX, { stiffness: 500, damping: 35, mass: 0.2 })
+  const dotY = useSpring(rawY, { stiffness: 500, damping: 35, mass: 0.2 })
+  const ringX = useSpring(rawX, { stiffness: 140, damping: 22, mass: 0.35 })
+  const ringY = useSpring(rawY, { stiffness: 140, damping: 22, mass: 0.35 })
 
   useEffect(() => {
-    const updateCursorPosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-      if (!isVisible) setIsVisible(true)
+    if (reduce || isTouch) return
+
+    document.documentElement.classList.add("has-custom-cursor")
+
+    const onMove = (e) => {
+      rawX.set(e.clientX)
+      rawY.set(e.clientY)
+      setVisible(true)
     }
 
-    const handleMouseLeave = () => {
-      setIsVisible(false)
+    const onLeave = () => setVisible(false)
+    const onEnter = () => setVisible(true)
+
+    const onOver = (e) => {
+      const target = e.target
+      if (!(target instanceof Element)) return
+      const interactive = target.closest(
+        'a, button, [data-cursor="hover"], input, textarea, summary, label'
+      )
+      setHovering(Boolean(interactive))
     }
 
-    const handleMouseEnter = () => {
-      setIsVisible(true)
-    }
-
-    window.addEventListener("mousemove", updateCursorPosition)
-    document.addEventListener("mouseleave", handleMouseLeave)
-    document.addEventListener("mouseenter", handleMouseEnter)
+    window.addEventListener("mousemove", onMove, { passive: true })
+    document.addEventListener("mouseleave", onLeave)
+    document.addEventListener("mouseenter", onEnter)
+    document.addEventListener("mouseover", onOver)
 
     return () => {
-      window.removeEventListener("mousemove", updateCursorPosition)
-      document.removeEventListener("mouseleave", handleMouseLeave)
-      document.removeEventListener("mouseenter", handleMouseEnter)
+      document.documentElement.classList.remove("has-custom-cursor")
+      window.removeEventListener("mousemove", onMove)
+      document.removeEventListener("mouseleave", onLeave)
+      document.removeEventListener("mouseenter", onEnter)
+      document.removeEventListener("mouseover", onOver)
     }
-  }, [isVisible])
+  }, [reduce, isTouch, rawX, rawY])
 
-  // Don't render the cursor on mobile devices
-  if (typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches) {
-    return null
-  }
+  if (reduce || isTouch) return null
 
   return (
-    <div
-      className="custom-cursor"
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        opacity: isVisible ? 1 : 0,
-      }}
-      aria-hidden="true"
-    />
+    <>
+      <motion.div
+        className="custom-cursor-dot"
+        style={{
+          x: dotX,
+          y: dotY,
+          opacity: visible ? 1 : 0,
+          scale: hovering ? 0.5 : 1,
+        }}
+        aria-hidden
+      />
+      <motion.div
+        className="custom-cursor-ring"
+        style={{
+          x: ringX,
+          y: ringY,
+          opacity: visible ? 1 : 0,
+          scale: hovering ? 1.65 : 1,
+        }}
+        aria-hidden
+      />
+    </>
   )
 }
 
-// Memoize the component to prevent unnecessary re-renders
 export default memo(CustomCursor)

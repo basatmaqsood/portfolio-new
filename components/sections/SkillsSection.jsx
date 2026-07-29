@@ -1,37 +1,54 @@
 "use client"
-import { motion } from "framer-motion"
+import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "framer-motion"
 import { useState } from "react"
+import { AccentSplit } from "@/components/motion/SplitText"
+import Magnetic from "@/components/motion/Magnetic"
+import { easeLuxury } from "@/components/motion/variants"
+
+const viewport = { once: true, amount: 0.15, margin: "0px 0px -5% 0px" }
+
+const chipContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.05, delayChildren: 0.04 },
+  },
+}
+
+const chipItem = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: easeLuxury },
+  },
+}
+
+const tileIn = {
+  hidden: { opacity: 0, y: 20, scale: 0.96 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.45,
+      ease: easeLuxury,
+      delay: Math.min(i * 0.04, 0.4),
+    },
+  }),
+}
 
 export default function SkillsSection({ skills }) {
   const [activeCategory, setActiveCategory] = useState("all")
+  const reduce = useReducedMotion()
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  }
+  const categories = ["all", ...new Set((skills || []).map((skill) => skill.category))]
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
+  const filteredSkills =
+    activeCategory === "all" ? skills || [] : (skills || []).filter((skill) => skill.category === activeCategory)
 
-  // Get unique categories
-  const categories = ["all", ...new Set(skills.map((skill) => skill.category))]
-  
-  // Filter skills by category
-  const filteredSkills =  activeCategory === "all"
-      ? skills
-      : skills.filter((skill) => skill.category === activeCategory)
-
-  // Fallback skills if none are provided
   const fallbackSkills = [
     { name: "HTML/CSS", category: "Frontend" },
-    { name: "JavaScript", category: "Frontend" },
+    { name: "JavaScript", category: "Languages" },
     { name: "React.js", category: "Frontend" },
     { name: "Next.js", category: "Frontend" },
     { name: "Node.js", category: "Backend" },
@@ -41,46 +58,82 @@ export default function SkillsSection({ skills }) {
   const displaySkills = filteredSkills.length > 0 ? filteredSkills : fallbackSkills
 
   return (
-    <motion.section
-      className="mb-20"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={fadeInUp}
-      aria-labelledby="skills-heading"
-    >
-      <h2 id="skills-heading" className="section-title">
-        My <span className="text-purple-500">Skills</span>
-      </h2>
+    <section className="mb-20" aria-labelledby="skills-heading">
+      <AccentSplit before="My" accent="Skills" className="section-title" />
 
-      <motion.div className="flex flex-wrap gap-4 mb-10" variants={fadeInUp}>
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`px-4 py-2 rounded-full ${
-              activeCategory === category ? "bg-purple-600" : "bg-zinc-800"
-            } transition-colors`}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </button>
-        ))}
-      </motion.div>
+      <LayoutGroup>
+        <motion.div
+          className="flex flex-wrap gap-4 mb-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={chipContainer}
+        >
+          {categories.map((category) => (
+            <motion.div key={category} variants={chipItem}>
+              <Magnetic strength={0.3}>
+                <button
+                  className={`relative px-4 py-2 rounded-full overflow-hidden transition-colors ${
+                    activeCategory === category ? "text-white" : "bg-zinc-800 text-zinc-300"
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                  data-cursor="hover"
+                >
+                  {activeCategory === category && (
+                    <motion.span
+                      layoutId="skillChip"
+                      className="absolute inset-0 bg-purple-600 rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                    />
+                  )}
+                  <span className="relative z-10">
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </span>
+                </button>
+              </Magnetic>
+            </motion.div>
+          ))}
+        </motion.div>
+      </LayoutGroup>
 
-      <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" variants={staggerContainer}   initial="hidden"
-  animate="visible">
-        {displaySkills.map((skill, index) => (
-          <motion.div
-            key={index}
-            className="bg-zinc-900 p-4 rounded-lg text-center hover:bg-zinc-800 transition-colors"
-            variants={fadeInUp}
-            whileHover={{ y: -3 }}
-          >
-            <span className="text-purple-500 font-medium">{skill.name}</span>
-            <p className="text-xs text-zinc-400 mt-1">{skill.category}</p>
-          </motion.div>
-        ))}
+      <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" layout>
+        <AnimatePresence mode="popLayout">
+          {displaySkills.map((skill, index) => (
+            <motion.div
+              key={`${skill.name}-${skill.category}`}
+              layout
+              custom={index}
+              variants={reduce ? undefined : tileIn}
+              initial={reduce ? false : "hidden"}
+              whileInView={reduce ? undefined : "visible"}
+              viewport={viewport}
+              exit={{ opacity: 0, scale: 0.94, transition: { duration: 0.2 } }}
+            >
+              <Magnetic strength={0.18}>
+                <div
+                  className="relative bg-zinc-900 p-4 rounded-lg text-center border border-zinc-800/60 hover:border-purple-500/40 hover:bg-zinc-800/90 transition-colors overflow-hidden group"
+                  data-cursor="hover"
+                >
+                  {!reduce && (
+                    <motion.div
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: [0, 1, 0] }}
+                      viewport={viewport}
+                      transition={{ duration: 0.8, delay: 0.1 + Math.min(index * 0.03, 0.25) }}
+                      aria-hidden
+                    />
+                  )}
+
+                  <span className="relative z-10 block text-purple-500 font-medium">{skill.name}</span>
+                  <div className="mx-auto mt-2 mb-1 h-px w-8 bg-purple-500/60" aria-hidden />
+                  <p className="relative z-10 text-xs text-zinc-400 mt-1">{skill.category}</p>
+                </div>
+              </Magnetic>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </motion.div>
-    </motion.section>
+    </section>
   )
 }
