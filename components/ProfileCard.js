@@ -35,8 +35,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
     )
   }
 
-  const profileImage =
-    imageError || !profileData.dp ? profileData.dp2?.url || "/profile-casual.jpeg" : profileData.dp?.url || "/profile-casual.jpeg"
+  const profileImage = imageError ? "/placeholder.svg" : "/side-pfp.jpeg"
 
   return (
     <motion.div
@@ -46,7 +45,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
       variants={staggerContainer}
     >
       <motion.div
-        className="relative w-28 h-28 rounded-none overflow-hidden mb-5 border-2 border-border"
+        className="relative w-32 h-32 rounded-full overflow-hidden mb-5 border-2 border-brand-600/40 ring-4 ring-brand-600/10 shadow-sm"
         variants={clipReveal}
       >
         <Image
@@ -54,7 +53,7 @@ export default function ProfileCard({ profileData, socialLinks }) {
           alt={profileData?.Name || "Profile"}
           fill
           className="object-cover"
-          sizes="112px"
+          sizes="128px"
           priority
           onError={() => setImageError(true)}
         />

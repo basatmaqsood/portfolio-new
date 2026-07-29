@@ -22,8 +22,8 @@ export default function Footer() {
       <div className="flex justify-center gap-2 mt-2">
         {[
           { href: "mailto:me@basatmaqsood.com", label: "Email Me" },
-          { href: "tel:+923078776306", label: "Call Me" },
-          { href: "https://wa.me/923078776306", label: "WhatsApp", external: true },
+          { href: "tel:+923260185306", label: "Call Me" },
+          { href: "https://wa.me/923260185306", label: "WhatsApp", external: true },
         ].map((item) => (
           <Magnetic key={item.label} strength={0.35}>
             <a
