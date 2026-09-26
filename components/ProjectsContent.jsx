@@ -5,7 +5,16 @@ import { AccentSplit } from "@/components/motion/SplitText"
 import MediaCard from "@/components/motion/MediaCard"
 
 export default function ProjectsContent({ projects }) {
-  const sortedData = [...projects].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+  const featuredIds = [60, 61, 62] // Easyferra, AMS Portals, GetYourPass
+  const sortedData = [...projects].sort((a, b) => {
+    const aFeatured = featuredIds.indexOf(a.id)
+    const bFeatured = featuredIds.indexOf(b.id)
+    if (aFeatured !== -1 && bFeatured !== -1) return aFeatured - bFeatured
+    if (aFeatured !== -1) return -1
+    if (bFeatured !== -1) return 1
+    // Keep the original ascending order for older projects
+    return new Date(a.created_at) - new Date(b.created_at)
+  })
 
   return (
     <>
