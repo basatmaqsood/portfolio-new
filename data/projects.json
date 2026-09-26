@@ -1,5 +1,59 @@
 [
     {
+        "id": 60,
+        "document_id": "easyferra-client-tools-2026",
+        "title": "Easyferra",
+        "description": "Free online toolkit of 140+ utilities for everyday work (Portuguese): PDF and image processing, text helpers, calculators, and home/garden tools. Files stay in the browser when possible—no account, no server upload. Product built end-to-end: tools, SEO content, PWA icons, legal pages, and deploy (Next.js, TypeScript, Tailwind CSS).",
+        "link": "https://easyferra.com",
+        "category": "Product",
+        "created_at": "2026-09-26 10:00:00.000",
+        "updated_at": "2026-09-26 10:00:00.000",
+        "published_at": "2026-09-26 10:00:00.000",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1790398170/ferra-compactada_1_hogvmm.png"
+        },
+        "date": "2026"
+    },
+    {
+        "id": 61,
+        "document_id": "ams-portals-saas-2026",
+        "title": "AMS Portals",
+        "description": "Bilingual, white-labeled platform for schools and sports academies to manage programs, activities, registrations, attendance, payments, and communications in one system. Built to cut manual work, improve parent experience, and scale with custom branding and workflows.",
+        "link": "https://amsportals.com/",
+        "category": "SaaS",
+        "created_at": "2026-09-26 09:59:00.000",
+        "updated_at": "2026-09-26 10:00:00.000",
+        "published_at": "2026-09-26 10:00:00.000",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1790398752/ams_wxpxby.jpg"
+        },
+        "date": "2026"
+    },
+    {
+        "id": 62,
+        "document_id": "getyourpass-booking-2026",
+        "title": "GetYourPass",
+        "description": "Booking platform for schools, events, sports centers, and businesses to manage classes, memberships, events, ticketing, attendance, and payments in one place. Supports custom pricing, white-label setup, and API access for branded booking experiences.",
+        "link": "https://getyourpass.app/",
+        "category": "Platform",
+        "created_at": "2026-09-26 09:58:00.000",
+        "updated_at": "2026-09-26 10:00:00.000",
+        "published_at": "2026-09-26 10:00:00.000",
+        "created_by_id": 1,
+        "updated_by_id": 1,
+        "locale": null,
+        "cover": {
+            "url": "https://res.cloudinary.com/dr7askqqy/image/upload/v1790398752/gyp_erbmpn.jpg"
+        },
+        "date": "2026"
+    },
+    {
         "id": 1,
         "document_id": "omsju3h3v48s1e8p8gtcw8g8",
         "title": "Next-Rivals",

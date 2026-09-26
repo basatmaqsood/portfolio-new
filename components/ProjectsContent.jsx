@@ -5,14 +5,14 @@ import { AccentSplit } from "@/components/motion/SplitText"
 import MediaCard from "@/components/motion/MediaCard"
 
 export default function ProjectsContent({ projects }) {
-  const sortedData = [...projects].sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+  const sortedData = [...projects].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
 
   return (
     <>
       <ExperienceSection />
 
       <section className="mt-16">
-        <AccentSplit before="Hobby" accent="Projects" className="text-4xl font-bold mb-10" />
+        <AccentSplit before="Selected" accent="Projects" className="text-4xl font-bold mb-10" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {sortedData.map((project, index) => (
